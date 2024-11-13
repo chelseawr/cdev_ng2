@@ -15,7 +15,7 @@ frontend:
     build:
       commands:
         - cdk bootstrap aws://096726583123/us-east-2
-        - ng build --configuration=production
+        - ng build
   artifacts:
     baseDirectory: dist/cdev_ng2
     files:
