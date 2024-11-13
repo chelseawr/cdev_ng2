@@ -13,9 +13,9 @@ frontend:
         - ng version
         - ng build --configuration=production
   artifacts:
-    baseDirectory: dist/amplify-angular-template/browser
+    baseDirectory: dist/cdev_ng2
     files:
-      - '**/*'
+      - "**/*"
   cache:
     paths:
       - .npm/**/*
