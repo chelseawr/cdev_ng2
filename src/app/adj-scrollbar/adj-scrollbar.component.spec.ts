@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TodosComponent } from './todos.component';
+import { AdjScrollbarComponent } from './adj-scrollbar.component';
 
-describe('TodosComponent', () => {
-  let component: TodosComponent;
-  let fixture: ComponentFixture<TodosComponent>;
+describe('AdjScrollbarComponent', () => {
+  let component: AdjScrollbarComponent;
+  let fixture: ComponentFixture<AdjScrollbarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TodosComponent]
+      imports: [AdjScrollbarComponent]
     })
     .compileComponents();
-    
-    fixture = TestBed.createComponent(TodosComponent);
+
+    fixture = TestBed.createComponent(AdjScrollbarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
