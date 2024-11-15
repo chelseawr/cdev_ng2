@@ -10,7 +10,7 @@ frontend:
         - npm install -g aws-cdk
         - npm install -g @angular/cli
         - npm install @parcel/watcher
-        - npm ci --cache .npm --prefer-offline
+        - npm install --legacy-peer-deps
         - npx ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AWS_APP_ID
 
     build:
