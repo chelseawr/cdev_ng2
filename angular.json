@@ -52,14 +52,15 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "cdev_ng2:build:production"
+              "buildTarget": "cdev_ng2:build:production"
             }
-          }
+          },
+          "defaultConfiguration": "production"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "amplify-angular-template:build"
+            "buildTarget": "cdev_ng2:build"
           }
         }
       }
