@@ -1,0 +1,33 @@
+.scroller {
+  height: 1.2em;
+  line-height: 1.2em;
+  position: relative;
+  overflow: hidden;
+  margin: 10px 0 10px 0;
+  width: 10em;
+}
+.scroller > span {
+  position: absolute;
+  top: 0;
+  animation: slide 10s infinite;
+  font-weight: bold;
+}
+
+h3 {
+  font-family: "Arsenal SC", "Lekton";
+}
+
+@keyframes slide {
+  0% {
+    top: 0;
+  }
+  25% {
+    top: -1.2em;
+  }
+  50% {
+    top: -2.4em;
+  }
+  75% {
+    top: -3.6em;
+  }
+}

@@ -10,7 +10,7 @@ import { ContactButtonComponent } from '../contact-button/contact-button.compone
   standalone: true,
   imports: [AdjectiveWheelComponent, ContactButtonComponent, FontAwesomeModule],
   templateUrl: './box.component.html',
-  styleUrl: './box.component.css',
+  styleUrl: './box.component.scss',
 })
 export class BoxComponent {
   // change source path to Amplify hosted file /assets

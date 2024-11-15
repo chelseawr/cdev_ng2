@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './adjective-wheel.component.html',
-  styleUrl: './adjective-wheel.component.css'
+  styleUrl: './adjective-wheel.component.scss',
 })
-export class AdjectiveWheelComponent {
-
-}
+export class AdjectiveWheelComponent {}
