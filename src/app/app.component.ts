@@ -4,6 +4,7 @@ import { Amplify } from 'aws-amplify';
 import outputs from '../../amplify_outputs.json';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { BoxComponent } from './box/box.component';
 Amplify.configure(outputs);
 
 @Component({
@@ -11,7 +12,7 @@ Amplify.configure(outputs);
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  imports: [RouterOutlet, FontAwesomeModule],
+  imports: [RouterOutlet, FontAwesomeModule, BoxComponent],
 })
 export class AppComponent {
   shiningRed = `rgb(152, 31, 36)`;

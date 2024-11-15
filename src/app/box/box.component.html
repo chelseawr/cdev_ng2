@@ -1,0 +1,22 @@
+<app-adjective-wheel />
+<contact-button />
+
+<div className="outsideLinks">
+  <button matTooltip="LinkedIn" mat-fab>
+    <a href="https://www.linkedin.com/in/chelseawr/">
+      <fa-icon [icon]="faLinkedin" size="2x" />
+    </a>
+  </button>
+
+  <button matTooltip="Personal Github" mat-fab>
+    <a href="https://github.com/chelseawr">
+      <fa-icon [icon]="faGithub" size="2x" />
+    </a>
+  </button>
+
+  <button matTooltip="Download Resume" mat-fab>
+    <a [href]="sourcePath" [download]="fileName">
+      <fa-icon [icon]="faFilePdf" size="2x" />
+    </a>
+  </button>
+</div>
