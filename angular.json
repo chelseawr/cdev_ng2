@@ -14,7 +14,7 @@
           "options": {
             "outputPath": "dist/cdev_ng2",
             "index": "src/index.html",
-            "browser": "src/main.ts",
+            "browser": "src/app/app.component.ts",
             "baseHref": "/",
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
