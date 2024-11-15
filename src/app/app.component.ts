@@ -12,7 +12,7 @@ Amplify.configure(outputs);
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  imports: [RouterOutlet, FontAwesomeModule, BoxComponent],
+  imports: [FontAwesomeModule, BoxComponent],
 })
 export class AppComponent {
   shiningRed = `rgb(152, 31, 36)`;
