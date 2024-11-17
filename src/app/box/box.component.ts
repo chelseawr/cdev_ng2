@@ -5,7 +5,6 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faFilePdf } from '@fortawesome/free-solid-svg-icons';
 import { ContactButtonComponent } from '../contact-button/contact-button.component';
 import { MatButtonModule } from '@angular/material/button';
-import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-box',
@@ -13,7 +12,6 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   imports: [
     AdjectiveWheelComponent,
     MatButtonModule,
-    MatTooltipModule,
     ContactButtonComponent,
     FontAwesomeModule,
   ],
@@ -21,14 +19,10 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   styleUrl: './box.component.scss',
 })
 export class BoxComponent {
-  openExternalLink(url: string): void {
-    window.open(url, '_blank', 'noopener,noreferrer');
-  }
-
-  // TODO change source path to Amplify hosted file /assets
   sourcePath =
-    'https://github.com/chelseawr/cdev_ng/blob/master/src/assets/May2024-resume.pdf';
+    'https://public-cdev.s3.us-east-2.amazonaws.com/May2024-resume.pdf';
   fileName = 'May2024-resume.pdf';
+
   faLinkedin = faLinkedin;
   faGithub = faGithub;
   faFilePdf = faFilePdf;

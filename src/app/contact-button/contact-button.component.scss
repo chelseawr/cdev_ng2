@@ -1,19 +1,19 @@
-button {
-  color: black;
+$shining-red: rgb(152, 31, 36);
+$shining-orange: rgb(223, 95, 24);
+
+.btn {
+  color: white;
   margin-bottom: 20px;
-  background-color: white;
-  a {
-    color: black;
+  transition: background-color 0.5s ease-out;
+  background-color: $shining-red;
+  span {
+    color: white;
     padding-right: 10px;
     text-decoration: none;
     font-family: "Lekton";
     font-size: 16px;
   }
 }
-button:hover {
-  color: white;
-  background-color: rgb(223, 95, 24); //shining orange
-  a {
-    color: white;
-  }
+.btn:hover {
+  background-color: $shining-orange;
 }
