@@ -2,21 +2,37 @@
 <contact-button />
 
 <div className="outsideLinks">
-  <button matTooltip="LinkedIn" mat-fab>
-    <a href="https://www.linkedin.com/in/chelseawr/">
-      <fa-icon [icon]="faLinkedin" size="2x" />
-    </a>
-  </button>
+  <a
+    href="https://www.linkedin.com/in/chelseawr/"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="btn"
+    title="LinkedIn"
+  >
+    <span style="font-size: 48px">
+      <fa-icon [icon]="faLinkedin"></fa-icon>
+    </span>
+  </a>
+  <a
+    href="https://github.com/chelseawr"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="btn"
+    title="Personal Github"
+  >
+    <span style="font-size: 48px"> <fa-icon [icon]="faGithub"></fa-icon> </span>
+  </a>
 
-  <button matTooltip="Personal Github" mat-fab>
-    <a href="https://github.com/chelseawr">
-      <fa-icon [icon]="faGithub" size="2x" />
-    </a>
-  </button>
-
-  <button matTooltip="Download Resume" mat-fab>
-    <a [href]="sourcePath" [download]="fileName">
-      <fa-icon [icon]="faFilePdf" size="2x" />
-    </a>
-  </button>
+  <a
+    [href]="sourcePath"
+    [download]="fileName"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="btn"
+    title="Download Resume"
+  >
+    <span style="font-size: 48px">
+      <fa-icon [icon]="faFilePdf"></fa-icon>
+    </span>
+  </a>
 </div>

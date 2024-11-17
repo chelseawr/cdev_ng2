@@ -10,5 +10,10 @@
   "search.exclude": {
     "**/node_modules": false
   },
-  "search.useGlobalIgnoreFiles": true
+  "search.useGlobalIgnoreFiles": true,
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#282552",
+    "titleBar.activeBackground": "#383473",
+    "titleBar.activeForeground": "#FBFBFD"
+  }
 }

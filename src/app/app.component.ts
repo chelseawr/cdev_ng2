@@ -14,8 +14,6 @@ Amplify.configure(outputs);
   imports: [FontAwesomeModule, BoxComponent],
 })
 export class AppComponent {
-  shiningRed = `rgb(152, 31, 36)`;
-  shiningOrange = `rgb(223, 95, 24)`;
   title = 'cdev_ng';
 }
 

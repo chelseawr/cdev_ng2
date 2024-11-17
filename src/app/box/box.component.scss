@@ -1,14 +1,19 @@
-button:nth-child(2) {
-  margin: 0 20px 0 20px;
-}
+$shining-red: rgb(152, 31, 36);
+$shining-orange: rgb(223, 95, 24);
+
 a {
+  display: inline-block;
   color: black;
-  // background-color: pink;
-}
-button {
-  background-color: rgb(223, 95, 24);
 }
 
-button:hover {
-  background-color: rgb(152, 31, 36); //shining orange
+.btn:nth-child(2) {
+  margin: 0 20px 0 20px;
+}
+
+.btn {
+  background-color: $shining-orange;
+}
+
+.btn:hover {
+  background-color: $shining-red;
 }

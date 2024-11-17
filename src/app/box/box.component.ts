@@ -5,6 +5,7 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faFilePdf } from '@fortawesome/free-solid-svg-icons';
 import { ContactButtonComponent } from '../contact-button/contact-button.component';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-box',
@@ -12,6 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
   imports: [
     AdjectiveWheelComponent,
     MatButtonModule,
+    MatTooltipModule,
     ContactButtonComponent,
     FontAwesomeModule,
   ],
@@ -19,6 +21,10 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './box.component.scss',
 })
 export class BoxComponent {
+  openExternalLink(url: string): void {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  }
+
   // TODO change source path to Amplify hosted file /assets
   sourcePath =
     'https://github.com/chelseawr/cdev_ng/blob/master/src/assets/May2024-resume.pdf';
