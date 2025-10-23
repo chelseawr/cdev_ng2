@@ -8,10 +8,12 @@ frontend:
         - npm cache clean --force
         - nvm install 22.21.0
         - nvm use 22.21.0
-        - npm config list
+        - npm config get registry
+        - npm config list -l
+        - npm whoami # will 401 if npm expects auth and you don't have it
         - npm install -g aws-cdk
         - npm install -g @angular/cli
-        - npm i --force
+        - npm i --legacy-peer-deps
         - npx ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AWS_APP_ID
 
     build:
