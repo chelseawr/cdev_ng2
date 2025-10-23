@@ -59,3 +59,23 @@ main {
   scroll-snap-type: y mandatory;
   -webkit-overflow-scrolling: touch;
 }
+
+.nav {
+  position: sticky;
+  width: min-content;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 40px);
+  padding: 3px;
+  justify-items: center;
+  align-items: center;
+  z-index: 10;
+  background-color: #d3d3d3;
+  opacity: 1;
+  height: 30px;
+  transition: opacity 0.3s;
+}
+.nav.show {
+  opacity: 1;
+}
