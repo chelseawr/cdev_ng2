@@ -1,9 +1,27 @@
 <main>
-  <ul class="nav">
-    <li class="item" data-nav="slide1"><a href="#slide1">01</a></li>
-    <li class="item" data-nav="slide2"><a href="#slide2">02</a></li>
-    <li class="item" data-nav="slide3"><a href="#slide3">03</a></li>
+  <div #topSentinel class="top-sentinel" aria-hidden="true"></div>
+  <ul class="nav" [class.is-visible]="navVisible">
+    <li class="item" [class.active]="activeId === 'slide1'">
+      <a href="#slide1">01</a>
+    </li>
+    <li class="item" [class.active]="activeId === 'slide2'">
+      <a href="#slide2">02</a>
+    </li>
+    <li class="item" [class.active]="activeId === 'slide3'">
+      <a href="#slide3">03</a>
+    </li>
   </ul>
 
-  <app-slide1></app-slide1> <app-slide2></app-slide2><app-slide3></app-slide3>
+  <app-slide1
+    [scrollSpySection]="'slide1'"
+    (inView)="activeId = $event"
+  ></app-slide1>
+  <app-slide2
+    [scrollSpySection]="'slide1'"
+    (inView)="activeId = $event"
+  ></app-slide2
+  ><app-slide3
+    [scrollSpySection]="'slide1'"
+    (inView)="activeId = $event"
+  ></app-slide3>
 </main>
