@@ -11,11 +11,10 @@ frontend:
         # Nuke any global/user npm config the image might have
         - rm -f ~/.npmrc || true
         - unset NPM_TOKEN NPM_CONFIG_REGISTRY NPM_CONFIG_ALWAYS_AUTH || true
-        - npm config set always-auth false
         - npm whoami # will 401 if npm expects auth and you don't have it
         - npm install -g aws-cdk
         - npm install -g @angular/cli
-        - npm i --legacy-peer-deps --verbose
+        - npm i --verbose
         - npx ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AWS_APP_ID
 
     build:
