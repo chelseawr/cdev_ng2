@@ -59,12 +59,16 @@ main {
   -webkit-overflow-scrolling: touch;
 }
 
+.item {
+  list-style: none;
+}
+
 .nav {
   position: fixed;
   top: 0;
   left: 0;
   display: grid;
-  grid-template-columns: repeat(4, 40px);
+  grid-template-rows: repeat(4, 40px);
   padding: 3px;
   justify-items: center;
   align-items: center;
