@@ -52,11 +52,10 @@ h2 {
   left: 0;
 }
 
-/* Vertical full-page snap */
 main {
   height: 100%;
   overflow-y: auto;
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y mandatory; /* Vertical full-page snap */
   -webkit-overflow-scrolling: touch;
 }
 

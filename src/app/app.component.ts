@@ -19,9 +19,7 @@ import {
   EventEmitter,
   Directive,
 } from '@angular/core';
-//
-// --- ScrollSpySectionDirective ---
-//
+
 @Directive({
   selector: '[scrollSpySection]',
   standalone: true,
@@ -31,7 +29,6 @@ export class ScrollSpySectionDirective implements AfterViewInit, OnDestroy {
   @Output() inView = new EventEmitter<string>();
 
   private intersectionObserver?: IntersectionObserver;
-
   constructor(private el: ElementRef<HTMLElement>, private zone: NgZone) {}
 
   // which one to highlight
@@ -40,11 +37,10 @@ export class ScrollSpySectionDirective implements AfterViewInit, OnDestroy {
       this.intersectionObserver = new IntersectionObserver(
         (entries) => {
           for (const e of entries) {
-            // console.log('entries [i]', e.target);
-
             if (e.target === this.el.nativeElement && e.isIntersecting) {
-              // console.log('hit match');
-              this.zone.run(() => this.inView.emit(this.id));
+              this.zone.run(() => {
+                this.inView.emit(this.id);
+              });
             }
           }
         },
@@ -60,9 +56,6 @@ export class ScrollSpySectionDirective implements AfterViewInit, OnDestroy {
   }
 }
 
-//
-// --- PageComponent ---
-//
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -91,21 +84,9 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   ngAfterViewInit(): void {
     this.zone.runOutsideAngular(() => {
       this.visibilityObserver = new IntersectionObserver((entries) => {
-        console.log(entries.length);
         const sentinelVisible = entries[0]?.isIntersecting ?? true;
-        console.log(sentinelVisible);
-        // Re-enter Angular so the template updates
-        this.zone.run(() => {
-          if (sentinelVisible) {
-            // The top sentinel is on screen → hide the nav
-            this.navVisible = false;
-            // console.log('hide nav');
-          } else {
-            // The top sentinel is off screen → show the nav
-            this.navVisible = true;
-            // console.log('show nav');
-          }
-        });
+        // reenter Angular so the template updates
+        this.zone.run(() => (this.navVisible = sentinelVisible ? false : true));
       });
 
       this.visibilityObserver.observe(this.topSentinel.nativeElement);
