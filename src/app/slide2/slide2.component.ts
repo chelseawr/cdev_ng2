@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { BoxComponent } from '../box/box.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @Component({
