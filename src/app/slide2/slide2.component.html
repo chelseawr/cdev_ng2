@@ -2,12 +2,15 @@
   <div class="veil"></div>
   <article class="card">
     <div id="card" class="hero">
-      <h1 id="hello">intro blurb</h1>
-      <h2 id="name">
-        Experienced, cleared senior software engineer with a diverse technical
-        background and rare mix of technical rigor, clear communication, and
-        team mentorship.
-      </h2>
+      <h1 id="hello">introduction</h1>
+      <div id="innerbox" [ngClass]="{ isNotPhone: !isPhonePortrait }">
+        <h2 id="text">
+          Experienced, cleared senior software engineer with a diverse technical
+          background and rare mix of technical rigor, clear communication, and
+          team mentorship.
+        </h2>
+        <div id="picBox"></div>
+      </div>
     </div>
   </article>
 </section>
