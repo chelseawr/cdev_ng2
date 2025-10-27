@@ -7,9 +7,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   selector: 'contact-button',
   standalone: true,
   imports: [MatButtonModule, FontAwesomeModule],
-  templateUrl: './contact-button.component.html',
-  styleUrl: './contact-button.component.scss',
+  templateUrl: './contact-button.html',
+  styleUrl: './contact-button.scss',
 })
-export class ContactButtonComponent {
+export class ContactButton {
   faChevronDoubleRight = faCircleChevronRight;
 }

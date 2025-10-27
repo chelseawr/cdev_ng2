@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Slide2Component } from './slide2.component';
+import { ContactButton } from './contact-button';
 
-describe('Slide2Component', () => {
-  let component: Slide2Component;
-  let fixture: ComponentFixture<Slide2Component>;
+describe('ContactButtonComponent', () => {
+  let component: ContactButton;
+  let fixture: ComponentFixture<ContactButton>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Slide2Component]
-    })
-    .compileComponents();
+      imports: [ContactButton],
+    }).compileComponents();
 
-    fixture = TestBed.createComponent(Slide2Component);
+    fixture = TestBed.createComponent(ContactButton);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

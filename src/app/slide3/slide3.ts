@@ -4,9 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-slide3',
   standalone: true,
   imports: [],
-  templateUrl: './slide3.component.html',
-  styleUrl: './slide3.component.scss'
+  templateUrl: './slide3.html',
+  styleUrl: './slide3.scss',
 })
-export class Slide3Component {
-
-}
+export class Slide3 {}

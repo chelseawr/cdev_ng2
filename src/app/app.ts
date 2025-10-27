@@ -1,8 +1,8 @@
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { bootstrapApplication } from '@angular/platform-browser';
-import { Slide1Component } from './slide1/slide1.component';
-import { Slide2Component } from './slide2/slide2.component';
-import { Slide3Component } from './slide3/slide3.component';
+import { Slide1 } from './slide1/slide1';
+import { Slide2 } from './slide2/slide2';
+import { Slide3 } from './slide3/slide3';
 import {
   AfterViewInit,
   Component,
@@ -18,6 +18,7 @@ import {
   EventEmitter,
   Directive,
 } from '@angular/core';
+import { Slide4 } from './slide4/slide4';
 
 @Directive({
   selector: '[scrollSpySection]',
@@ -58,17 +59,18 @@ export class ScrollSpySectionDirective implements AfterViewInit, OnDestroy {
 @Component({
   selector: 'app-root',
   standalone: true,
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  templateUrl: './app.html',
+  styleUrl: './app.scss',
   imports: [
     FontAwesomeModule,
-    Slide1Component,
-    Slide2Component,
-    Slide3Component,
+    Slide1,
+    Slide2,
+    Slide3,
+    Slide4,
     ScrollSpySectionDirective,
   ],
 })
-export class AppComponent implements AfterViewInit, OnDestroy {
+export class App implements AfterViewInit, OnDestroy {
   @ViewChild('topSentinel', { read: ElementRef })
   topSentinel!: ElementRef<HTMLElement>;
 
@@ -96,4 +98,4 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     this.visibilityObserver?.disconnect();
   }
 }
-bootstrapApplication(AppComponent);
+bootstrapApplication(App);

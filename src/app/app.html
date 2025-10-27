@@ -10,6 +10,9 @@
     <li class="item" [class.active]="activeId === 'slide3'">
       <a href="#slide3">experience</a>
     </li>
+    <li class="item" [class.active]="activeId === 'slide4'">
+      <a href="#slide4">skills</a>
+    </li>
   </ul>
 
   <app-slide1
@@ -24,4 +27,8 @@
     [scrollSpySection]="'slide3'"
     (inView)="activeId = $event"
   ></app-slide3>
+  <app-slide4
+    [scrollSpySection]="'slide4'"
+    (inView)="activeId = $event"
+  ></app-slide4>
 </main>

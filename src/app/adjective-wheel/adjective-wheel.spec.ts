@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Slide1Component } from './slide1.component';
+import { AdjectiveWheel } from './adjective-wheel';
 
-describe('Slide1Component', () => {
-  let component: Slide1Component;
-  let fixture: ComponentFixture<Slide1Component>;
+describe('AdjectiveWheelComponent', () => {
+  let component: AdjectiveWheel;
+  let fixture: ComponentFixture<AdjectiveWheel>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Slide1Component]
-    })
-    .compileComponents();
+      imports: [AdjectiveWheel],
+    }).compileComponents();
 
-    fixture = TestBed.createComponent(Slide1Component);
+    fixture = TestBed.createComponent(AdjectiveWheel);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

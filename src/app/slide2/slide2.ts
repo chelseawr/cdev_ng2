@@ -6,10 +6,10 @@ import { CommonModule, NgClass } from '@angular/common';
   selector: 'app-slide2',
   standalone: true,
   imports: [FontAwesomeModule, CommonModule],
-  templateUrl: './slide2.component.html',
-  styleUrl: './slide2.component.scss',
+  templateUrl: './slide2.html',
+  styleUrl: './slide2.scss',
 })
-export class Slide2Component implements OnInit {
+export class Slide2 implements OnInit {
   isPhonePortrait = false;
   constructor(private responsive: BreakpointObserver) {}
   ngOnInit(): void {
