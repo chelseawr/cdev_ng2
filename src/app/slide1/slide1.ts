@@ -4,7 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { AdjectiveWheel } from '../adjective-wheel/adjective-wheel';
 import { ContactButton } from '../contact-button/contact-button';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faFilePdf } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faFilePdf } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-slide1',
@@ -21,4 +21,5 @@ export class Slide1 {
   faLinkedin = faLinkedin;
   faGithub = faGithub;
   faFilePdf = faFilePdf;
+  faArrow = faChevronDown;
 }
