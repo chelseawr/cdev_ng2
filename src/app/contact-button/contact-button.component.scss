@@ -8,12 +8,15 @@ $shining-orange: rgb(223, 95, 24);
   background-color: $shining-red;
   span {
     color: white;
-    padding-right: 10px;
     text-decoration: none;
-    font-family: "Lekton";
-    font-size: 16px;
+    font-family: "Chakra Petch";
+    font-size: 40px;
   }
 }
 .btn:hover {
   background-color: $shining-orange;
+}
+
+a {
+  text-decoration: none;
 }

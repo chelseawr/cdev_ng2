@@ -8,7 +8,16 @@ $shining-orange: rgb(223, 95, 24);
 .btn:nth-child(2) {
   margin: 0 20px 0 20px;
 }
-
+#name,
+#hello {
+  font-family: "Chakra Petch", sans-serif;
+}
+#name {
+  color: $shining-red;
+}
+#name > span {
+  background-color: white;
+}
 .btn {
   display: inline-block;
   color: black;
