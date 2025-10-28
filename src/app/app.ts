@@ -76,7 +76,6 @@ export class App implements AfterViewInit, OnDestroy {
 
   activeId: string | null = null;
   navVisible = false;
-
   private visibilityObserver?: IntersectionObserver;
 
   constructor(private zone: NgZone) {}
@@ -87,7 +86,7 @@ export class App implements AfterViewInit, OnDestroy {
       this.visibilityObserver = new IntersectionObserver((entries) => {
         const sentinelVisible = entries[0]?.isIntersecting ?? true;
         // reenter Angular so the template updates
-        this.zone.run(() => (this.navVisible = sentinelVisible ? false : true));
+        this.zone.run(() => (this.navVisible = !sentinelVisible));
       });
 
       this.visibilityObserver.observe(this.topSentinel.nativeElement);
@@ -96,6 +95,16 @@ export class App implements AfterViewInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.visibilityObserver?.disconnect();
+  }
+
+  // update page anchor onscroll
+  ngDoCheck(): void {
+    if (this.activeId) {
+      const currentHash = window.location.hash.replace('#', '');
+      if (currentHash !== this.activeId) {
+        history.replaceState(null, '', `#${this.activeId}`);
+      }
+    }
   }
 }
 bootstrapApplication(App);
