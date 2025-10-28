@@ -47,6 +47,12 @@
     </div>
   </article>
   <span id="arrow">
-    <fa-icon [fixedWidth]="true" [icon]="faArrow" class="pulse-arrow"></fa-icon>
+    <fa-icon
+      [fixedWidth]="true"
+      [icon]="faArrow"
+      class="pulse-arrow"
+      (click)="scrollTo('slide2')"
+    >
+    </fa-icon>
   </span>
 </section>

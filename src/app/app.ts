@@ -99,6 +99,7 @@ export class App implements AfterViewInit, OnDestroy {
 
   // update page anchor onscroll
   ngDoCheck(): void {
+    // console.log('this active id', this.activeId);
     if (this.activeId) {
       const currentHash = window.location.hash.replace('#', '');
       if (currentHash !== this.activeId) {

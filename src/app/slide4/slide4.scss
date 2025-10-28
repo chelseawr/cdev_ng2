@@ -1,9 +1,7 @@
-#one,
-#three {
+#innerbox div:nth-child(even) {
   text-align: left;
 }
 
-#two,
-#four {
+#innerbox div:nth-child(odd) {
   text-align: right;
 }
