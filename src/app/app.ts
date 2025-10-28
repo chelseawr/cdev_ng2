@@ -3,6 +3,8 @@ import { bootstrapApplication } from '@angular/platform-browser';
 import { Slide1 } from './slide1/slide1';
 import { Slide2 } from './slide2/slide2';
 import { Slide3 } from './slide3/slide3';
+import { Slide4 } from './slide4/slide4';
+import { Slide5 } from './slide5/slide5';
 import {
   AfterViewInit,
   Component,
@@ -10,15 +12,11 @@ import {
   NgZone,
   OnDestroy,
   ViewChild,
-  ViewChildren,
-  QueryList,
-  signal,
   Input,
   Output,
   EventEmitter,
   Directive,
 } from '@angular/core';
-import { Slide4 } from './slide4/slide4';
 
 @Directive({
   selector: '[scrollSpySection]',
@@ -67,6 +65,7 @@ export class ScrollSpySectionDirective implements AfterViewInit, OnDestroy {
     Slide2,
     Slide3,
     Slide4,
+    Slide5,
     ScrollSpySectionDirective,
   ],
 })
@@ -99,7 +98,6 @@ export class App implements AfterViewInit, OnDestroy {
 
   // update page anchor onscroll
   ngDoCheck(): void {
-    // console.log('this active id', this.activeId);
     if (this.activeId) {
       const currentHash = window.location.hash.replace('#', '');
       if (currentHash !== this.activeId) {
