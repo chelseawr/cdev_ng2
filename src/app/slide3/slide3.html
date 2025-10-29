@@ -1,91 +1,162 @@
 <section #watch>
   <div class="veil"></div>
   <article class="card" id="slide3">
-    <div id="card" class="hero">
+    <div id="card" class="hero" [ngClass]="{ isNotPhone: !isPhonePortrait }">
       <h1 id="cardTitle">experience</h1>
 
-      <div id="employer">
-        <h2 id="name">clarity innovations</h2>
+      <div class="employer">
+        <h2 class="name">
+          <a
+            href="https://clarityinnovates.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn"
+            title="Clarity Innovations"
+            ><span>Clarity Innovations</span></a
+          >
+        </h2>
+        <p class="daterange">October 2022 - present</p>
+        <p class="title">Senior Software Engineer</p>
 
-        <p>
-          <span>
-            <fa-icon [fixedWidth]="true" [icon]="faArrowRight"></fa-icon
-          ></span>
-          Led a team of 8 developers on a React application team for the United
-          States Air Force software factory Kessel Run.
-        </p>
+        <div class="blurb">
+          <fa-icon
+            [fixedWidth]="true"
+            class="bullet"
+            [icon]="faArrowRight"
+          ></fa-icon>
+          <p>
+            Led a team of 8 developers on a React application team for the
+            United States Air Force software factory Kessel Run.
+          </p>
+        </div>
+        <div class="blurb">
+          <fa-icon
+            [fixedWidth]="true"
+            class="bullet"
+            [icon]="faArrowRight"
+          ></fa-icon>
+          <p>
+            Identified and mitigated risks with major releases and resolved
+            critical conflicts regarding architecture ownership, balancing
+            technical feasibility with business requirements.
+          </p>
+        </div>
 
-        <p>
-          <span>
-            <fa-icon [fixedWidth]="true" [icon]="faArrowRight"></fa-icon
-          ></span>
-          Identified and mitigated risks with major releases and resolved
-          critical conflicts regarding architecture ownership, balancing
-          technical feasibility with business requirements.
-        </p>
-
-        <p>
-          <span>
-            <fa-icon [fixedWidth]="true" [icon]="faArrowRight"></fa-icon
-          ></span>
-          Incorporated AI-driven research and debugging assistance into
-          development workflows, enhancing problem-solving efficiency without
-          compromising code quality and review standards.
-        </p>
+        <div class="blurb">
+          <fa-icon
+            [fixedWidth]="true"
+            class="bullet"
+            [icon]="faArrowRight"
+          ></fa-icon>
+          <p>
+            Incorporated AI-driven research and debugging assistance into
+            development workflows, enhancing problem-solving efficiency without
+            compromising code quality and review standards.
+          </p>
+        </div>
       </div>
-      <div id="employer">
-        <h2 id="name">internetwork engineering</h2>
 
-        <p>
+      <div class="employer">
+        <h2 class="name">
+          <a
+            href="https://www.ineteng.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn"
+            title="Internetwork Engineering"
+            ><span>Internetwork Engineering</span></a
+          >
+        </h2>
+        <p class="daterange">September 2021 - October 2022</p>
+        <p class="title">Software Engineer</p>
+        <span>
+          <fa-icon [fixedWidth]="true" [icon]="faArrowLeft"></fa-icon>
+        </span>
+        <p class="blurb">
           Developed a Python automation tool to save over $30,000 per client
           deployment
-          <span>
-            <fa-icon [fixedWidth]="true" [icon]="faArrowLeft"></fa-icon>
-          </span>
         </p>
-
-        <p>
+        <span>
+          <fa-icon [fixedWidth]="true" [icon]="faArrowLeft"></fa-icon
+        ></span>
+        <p class="blurb">
           Responsible for maintenance and improvements to a network automation
           platform that enables users to configure private cloud resources
-          <span>
-            <fa-icon [fixedWidth]="true" [icon]="faArrowLeft"></fa-icon
-          ></span>
         </p>
       </div>
-      <div id="employer">
-        <h2 id="name">bloomberg l.p.</h2>
 
-        <p>
-          <span>
-            <fa-icon [fixedWidth]="true" [icon]="faArrowRight"></fa-icon
-          ></span>
-          Developed, maintained, and managed a metrics dashboard using React,
-          NGINX and Flask with a small remote team.
-        </p>
-        <p>
-          <span>
-            <fa-icon [fixedWidth]="true" [icon]="faArrowRight"></fa-icon
-          ></span>
-          Pioneered the effort to secure the deployment pipeline and client
-          facing code using Jenkins, Terser and Grunt.
-        </p>
+      <div class="employer">
+        <h2 class="name">
+          <a
+            href="https://www.bloomberg.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn"
+            title="Bloomberg"
+            ><span>Bloomberg L.P.</span></a
+          >
+        </h2>
+        <p class="daterange">July 2017 - September 2021</p>
+        <p class="title">Junior Software Engineer</p>
+        <div class="blurb">
+          <fa-icon
+            [fixedWidth]="true"
+            class="bullet"
+            [icon]="faArrowRight"
+          ></fa-icon>
+          <p>
+            Developed, maintained, and managed a metrics dashboard using React,
+            NGINX and Flask with a small remote team.
+          </p>
+        </div>
+        <div class="blurb">
+          <fa-icon
+            [fixedWidth]="true"
+            class="bullet"
+            [icon]="faArrowRight"
+          ></fa-icon>
+          <p>
+            Pioneered the effort to secure the deployment pipeline and client
+            facing code using Jenkins, Terser and Grunt.
+          </p>
+        </div>
       </div>
-      <div id="employer">
-        <h2 id="name">united states marine corps</h2>
-        <p>
+
+      <div class="employer">
+        <h2 class="name">
+          <a
+            href="https://www.imef.marines.mil/Units/I-MIG/1ST-RADIO-BN/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn"
+            title="1st Radio Battalion"
+            ><span>United States Marine Corps</span></a
+          >
+        </h2>
+        <p class="daterange">June 2012 - July 2017</p>
+        <p class="title">Database + Network Administrator</p>
+        <span>
+          <fa-icon
+            [fixedWidth]="true"
+            class="bullet"
+            [icon]="faArrowLeft"
+          ></fa-icon
+        ></span>
+        <p class="blurb">
           Awarded for developing an application for senior staff using VBA,
           solely responsible for deployment, status reporting and development
-          upgrades<span>
-            <fa-icon [fixedWidth]="true" [icon]="faArrowLeft"></fa-icon
-          ></span>
+          upgrades
         </p>
-
-        <p>
+        <span>
+          <fa-icon
+            [fixedWidth]="true"
+            class="bullet"
+            [icon]="faArrowLeft"
+          ></fa-icon
+        ></span>
+        <p class="blurb">
           Provided immediate recovery of mission critical files by implementing
           data snapshots and routine backups
-          <span>
-            <fa-icon [fixedWidth]="true" [icon]="faArrowLeft"></fa-icon
-          ></span>
         </p>
       </div>
     </div>

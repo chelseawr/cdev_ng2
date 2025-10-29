@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { CommonModule, NgClass } from '@angular/common';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-slide2',
   standalone: true,

@@ -1,14 +1,87 @@
-#card #employer:nth-child(even) {
+$shining-red: rgb(152, 31, 36);
+$shining-orange: rgb(223, 95, 24);
+
+* {
+  font-family: "Chakra Petch", sans-serif;
+}
+
+#card .employer:nth-child(even),
+#card.isNotPhone .employer:nth-child(odd) .daterange {
   text-align: left;
 }
 
-#card #employer:nth-child(odd) {
+#card .employer:nth-child(odd),
+#card.isNotPhone .employer:nth-child(even) .daterange {
   text-align: right;
 }
+
+#card.isNotPhone .employer:nth-child(even) .daterange {
+  margin-right: 75px;
+}
+
+#card.isNotPhone .employer:nth-child(odd) .daterange {
+  margin-left: 75px;
+}
+
 p {
   font-size: 14px;
 }
 
 .card {
   max-width: 75vw;
+}
+
+.daterange {
+  font-style: italic;
+}
+
+.blurb {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 5px;
+}
+
+.bullet {
+  flex: 0 0 1.25rem;
+  line-height: 1;
+}
+
+#card .employer:nth-child(even) .blurb {
+  color: limegreen;
+}
+#card .employer:nth-child(odd) .blurb {
+  color: purple;
+}
+
+.blurb p {
+  width: 72vw;
+  float: right;
+  margin: 0;
+}
+
+.daterange,
+.title {
+  margin: -10px 0 0 0;
+}
+h2 {
+  margin-bottom: 0;
+}
+
+a {
+  margin-bottom: 0;
+  margin-top: 25px;
+  color: $shining-red;
+}
+a > span {
+  background-color: white;
+}
+
+a > span:hover {
+  cursor: pointer;
+  background-color: transparent;
+}
+
+a {
+  text-decoration: none;
 }
