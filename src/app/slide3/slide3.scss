@@ -39,7 +39,8 @@ p {
   display: flex;
   align-items: flex-start;
   gap: 0.5rem;
-  margin-bottom: 5px;
+
+  margin: 0 5px 5px 5px;
 }
 
 .bullet {
@@ -47,15 +48,15 @@ p {
   line-height: 1;
 }
 
-#card .employer:nth-child(even) .blurb {
-  color: limegreen;
-}
-#card .employer:nth-child(odd) .blurb {
-  color: purple;
-}
+// #card .employer:nth-child(even) .blurb {
+//   color: limegreen;
+// }
+// #card .employer:nth-child(odd) .blurb {
+//   color: purple;
+// }
 
 .blurb p {
-  width: 72vw;
+  width: 68vw;
   float: right;
   margin: 0;
 }
@@ -80,6 +81,10 @@ a > span {
 a > span:hover {
   cursor: pointer;
   background-color: transparent;
+}
+
+.title {
+  padding: 2px;
 }
 
 a {
