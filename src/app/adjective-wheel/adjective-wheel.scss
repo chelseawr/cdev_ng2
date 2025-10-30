@@ -2,16 +2,32 @@
   height: 1.2em;
   line-height: 1.2em;
   position: relative;
-  margin-right: 11vw;
+  // margin-right: 11vw;
   overflow: hidden;
-  width: 17em;
-  margin-left: -2vw;
+  // width: 17em;
+  // margin-left: -2vw;
+
+  text-align: left;
+  margin-left: 4%;
 }
-.scroller > span {
+
+:host-context(.desktop) .scroller {
+  margin-left: 25%;
+}
+
+:host-context(.phone-portrait) h3 {
+  font-size: 25px;
+}
+
+.inner {
   position: absolute;
   top: 0;
   animation: slide 10s infinite;
   font-weight: bold;
+}
+
+.all {
+  width: 97vw;
 }
 
 h3 {

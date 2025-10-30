@@ -23,9 +23,16 @@ $shining-orange: rgb(223, 95, 24);
   margin-left: 75px;
 }
 
-p {
+#card.isNotPhone p {
   font-size: 14px;
 }
+// make it phone friendly
+p {
+  font-size: 12px;
+}
+
+// mobile cardtitle size 32
+// .name 17
 
 .card {
   max-width: 75vw;
@@ -61,9 +68,12 @@ p {
   margin: 0;
 }
 
+#card.isNotPhone .daterange {
+  margin: -10px 0 0 0;
+}
 .daterange,
 .title {
-  margin: -10px 0 0 0;
+  margin: 2px;
 }
 h2 {
   margin-bottom: 0;

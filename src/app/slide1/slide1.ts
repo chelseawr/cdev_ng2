@@ -5,6 +5,7 @@ import { AdjectiveWheel } from '../adjective-wheel/adjective-wheel';
 import { ContactButton } from '../contact-button/contact-button';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faChevronDown, faFilePdf } from '@fortawesome/free-solid-svg-icons';
+import { ResponsiveService } from '../responsive.service';
 
 @Component({
   selector: 'app-slide1',
@@ -14,6 +15,7 @@ import { faChevronDown, faFilePdf } from '@fortawesome/free-solid-svg-icons';
   styleUrl: './slide1.scss',
 })
 export class Slide1 {
+  constructor(public responsive: ResponsiveService) {}
   sourcePath =
     'https://public-cdev.s3.us-east-2.amazonaws.com/May2024-resume.pdf';
   fileName = 'May2024-resume.pdf';

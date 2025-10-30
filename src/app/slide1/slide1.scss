@@ -1,8 +1,16 @@
 $shining-red: rgb(152, 31, 36);
 $shining-orange: rgb(223, 95, 24);
 
-.card {
+:host-context(.desktop) #slide1 {
   width: 90vw;
+}
+
+:host-context(.phone-portrait) #hello {
+  font-size: 6vw;
+}
+
+:host-context(.desktop) #hello {
+  font-size: 3vw;
 }
 
 .btn:nth-child(2) {
