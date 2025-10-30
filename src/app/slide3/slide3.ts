@@ -1,26 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { CommonModule } from '@angular/common';
+import { Role, ROLES } from './roles.data';
+import { ResponsiveService } from '../responsive.service';
 
 @Component({
   selector: 'app-slide3',
   standalone: true,
-  imports: [FontAwesomeModule, CommonModule],
+  imports: [FontAwesomeModule],
   templateUrl: './slide3.html',
   styleUrl: './slide3.scss',
 })
 export class Slide3 {
+  constructor(public responsive: ResponsiveService) {}
+
   faArrowLeft = faArrowLeft;
   faArrowRight = faArrowRight;
-  isPhonePortrait = false;
-  constructor(private responsive: BreakpointObserver) {}
+  roles: Role[] = ROLES;
+  openId: string | null = null;
 
-  ngOnInit(): void {
-    this.responsive.observe(Breakpoints.HandsetPortrait).subscribe((result) => {
-      this.isPhonePortrait = false;
-      if (result.matches) this.isPhonePortrait = true;
-    });
+  onToggle(id: string, ev: MouseEvent) {
+    ev.preventDefault();
+    this.openId = this.openId === id ? null : id;
   }
 }
