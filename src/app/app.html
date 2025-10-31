@@ -1,5 +1,54 @@
 <main>
   <div #topSentinel class="top-sentinel" aria-hidden="true"></div>
+  @if (responsive.isPhonePortrait()){
+  <!-- Mobile/portrait: right-side pager dots -->
+  <nav class="pager" aria-label="Sections">
+    <button
+      type="button"
+      class="dot"
+      [class.active]="activeId === 'slide1'"
+      aria-label="Slide 1"
+      [attr.aria-current]="activeId === 'slide1' ? 'true' : null"
+      (click)="scrollTo('slide1')"
+    ></button>
+
+    <button
+      type="button"
+      class="dot"
+      [class.active]="activeId === 'slide2'"
+      aria-label="Slide 2"
+      [attr.aria-current]="activeId === 'slide2' ? 'true' : null"
+      (click)="scrollTo('slide2')"
+    ></button>
+
+    <button
+      type="button"
+      class="dot"
+      [class.active]="activeId === 'slide3'"
+      aria-label="Slide 3"
+      [attr.aria-current]="activeId === 'slide3' ? 'true' : null"
+      (click)="scrollTo('slide3')"
+    ></button>
+
+    <button
+      type="button"
+      class="dot"
+      [class.active]="activeId === 'slide4'"
+      aria-label="Slide 4"
+      [attr.aria-current]="activeId === 'slide4' ? 'true' : null"
+      (click)="scrollTo('slide4')"
+    ></button>
+
+    <button
+      type="button"
+      class="dot"
+      [class.active]="activeId === 'slide5'"
+      aria-label="Slide 5"
+      [attr.aria-current]="activeId === 'slide5' ? 'true' : null"
+      (click)="scrollTo('slide5')"
+    ></button>
+  </nav>
+  } @else {
   <ul class="nav" [class.is-visible]="navVisible">
     <li class="item" [class.active]="activeId === 'slide1'">
       <a href="#slide1">home</a>
@@ -17,33 +66,34 @@
       <a href="#slide5">education</a>
     </li>
   </ul>
+  }
 
   <app-slide1
     [scrollSpySection]="'slide1'"
-    (inView)="activeId = $event"
+    (inView)="onSectionInView($event)"
   ></app-slide1>
   <app-slide2
     [scrollSpySection]="'slide2'"
-    (inView)="activeId = $event"
+    (inView)="onSectionInView($event)"
   ></app-slide2
   ><app-slide3
     [scrollSpySection]="'slide3'"
-    (inView)="activeId = $event"
+    (inView)="onSectionInView($event)"
   ></app-slide3>
   <app-slide4
     [scrollSpySection]="'slide4'"
-    (inView)="activeId = $event"
+    (inView)="onSectionInView($event)"
   ></app-slide4>
   <app-slide5
     [scrollSpySection]="'slide5'"
-    (inView)="activeId = $event"
+    (inView)="onSectionInView($event)"
   ></app-slide5>
 </main>
 <!--
 
 todo mvp
 global isMobile prop--- DONE
-mobile experience+slide1 pages--- slide1 DONE
+mobile experience+slide1 pages---DONE
 mobile phone menu onscroll
 tidy slide1 buttons
 pro icons fancy

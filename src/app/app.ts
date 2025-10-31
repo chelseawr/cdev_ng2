@@ -17,6 +17,7 @@ import {
   EventEmitter,
   Directive,
 } from '@angular/core';
+import { ResponsiveService } from './responsive.service';
 
 @Directive({
   selector: '[scrollSpySection]',
@@ -76,8 +77,7 @@ export class App implements AfterViewInit, OnDestroy {
   activeId: string | null = null;
   navVisible = false;
   private visibilityObserver?: IntersectionObserver;
-
-  constructor(private zone: NgZone) {}
+  constructor(private zone: NgZone, public responsive: ResponsiveService) {}
 
   // show/hide nav itself
   ngAfterViewInit(): void {
@@ -97,13 +97,25 @@ export class App implements AfterViewInit, OnDestroy {
   }
 
   // update page anchor onscroll
-  ngDoCheck(): void {
-    if (this.activeId) {
-      const currentHash = window.location.hash.replace('#', '');
-      if (currentHash !== this.activeId) {
-        history.replaceState(null, '', `#${this.activeId}`);
-      }
+  // ngDoCheck(): void {
+  //   if (this.activeId) {
+  //     const currentHash = window.location.hash.replace('#', '');
+  //     if (currentHash !== this.activeId) {
+  //       history.replaceState(null, '', `#${this.activeId}`);
+  //     }
+  //   }
+  // }
+
+  onSectionInView(id: string) {
+    if (this.activeId !== id) {
+      this.activeId = id;
+      history.replaceState(null, '', `#${id}`);
     }
+  }
+
+  scrollTo(id: string) {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 }
 bootstrapApplication(App);
