@@ -15,19 +15,8 @@ $shining-orange: rgb(223, 95, 24);
   text-align: right;
 }
 
-#card.isNotPhone .employer:nth-child(even) .daterange {
-  margin-right: 75px;
-}
-
-#card.isNotPhone .employer:nth-child(odd) .daterange {
-  margin-left: 75px;
-}
-
 #card.isNotPhone p {
   font-size: 14px;
-}
-p {
-  font-size: 12px;
 }
 
 .card {
@@ -95,7 +84,6 @@ details.role,
   cursor: pointer;
 }
 
-/* Odd rows have reversed layout (arrow on right) */
 .summary.odd {
   direction: rtl;
   text-align: right;
