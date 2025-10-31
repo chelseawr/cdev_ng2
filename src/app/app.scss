@@ -69,13 +69,14 @@ main {
   left: 0;
   display: grid;
   grid-template-rows: repeat(4, 40px);
-  padding: 3px;
   justify-items: center;
   align-items: center;
   z-index: 10;
   background-color: var(--dark-blue);
   opacity: 0;
   transition: opacity 0.3s;
+  background-color: #000;
+  padding: 20px 10px;
 }
 
 .nav.is-visible {
@@ -85,11 +86,11 @@ main {
 
 .nav .item a {
   text-decoration: none;
-  color: #444;
+  color: white;
   padding: 0.25rem 0.5rem;
 }
 
 .nav .item.active a {
-  color: #0a58ca;
-  border-bottom: 2px solid #0a58ca;
+  color: $shining-orange;
+  border-bottom: 2px solid $shining-orange;
 }

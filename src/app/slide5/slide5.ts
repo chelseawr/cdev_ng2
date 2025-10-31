@@ -19,18 +19,18 @@ export class Slide5 {
     {
       school: 'Dakota State University',
       credential: 'Bachelor of Computer Science',
-      date: 'In progress',
+      date: 'Senior, expected 2026',
       inProgress: true,
     },
     {
-      school: 'Department of Labor Certification',
-      credential: 'Internetworking Technician',
-      date: 'October 2016',
+      school: 'Department of Labor',
+      credential: 'Internetworking Technician Certification',
+      date: 'March 2017',
     },
     {
       school: 'Portland Community College',
-      credential: 'Associates of General Studies',
-      date: 'June 2011',
+      credential: 'Associate of General Studies',
+      date: 'April 2014',
     },
   ];
 }
