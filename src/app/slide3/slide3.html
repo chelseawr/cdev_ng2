@@ -9,9 +9,13 @@
       <details
         class="role employer"
         [open]="openId === role.id"
-        (click)="onToggle(role.id, $event)"
+        [class.odd]="i % 2 !== 0"
       >
-        <summary class="summary" [class.odd]="i % 2 !== 0">
+        <summary
+          class="summary"
+          [class.odd]="i % 2 !== 0"
+          (click)="onToggle(role.id, $event)"
+        >
           <fa-icon class="chevron" [icon]="iconFor(i, role)"></fa-icon>
 
           <div class="heading">
