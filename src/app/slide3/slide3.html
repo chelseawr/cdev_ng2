@@ -34,12 +34,22 @@
           </ul>
         </div>
       </details>
-      } } @else { @for (role of roles; track role.id) {
-      <article class="role employer">
-        <header class="summary">
-          <div class="heading">
-            <div class="title">{{ role.title }} @ {{ role.company }}</div>
-            <div class="byline">{{ role.dates }}</div>
+      } } @else { @for (role of roles; track role.id; let i = $index) {
+      <article class="role employer" [class.odd]="i % 2 !== 0">
+        <header>
+          <div>
+            <div class="title">
+              {{ role.title }} @
+              <a
+                href="{{role.companyUrl}}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn company"
+                title="{{role.company}}"
+                ><span>{{ role.company }}</span></a
+              >
+            </div>
+            <div class="byline daterange">{{ role.dates }}</div>
           </div>
         </header>
         <div class="divider" role="presentation"></div>

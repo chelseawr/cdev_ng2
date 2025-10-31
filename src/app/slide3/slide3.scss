@@ -26,13 +26,9 @@ $shining-orange: rgb(223, 95, 24);
 #card.isNotPhone p {
   font-size: 14px;
 }
-// make it phone friendly
 p {
   font-size: 12px;
 }
-
-// mobile cardtitle size 32
-// .name 17
 
 .card {
   max-width: 75vw;
@@ -42,29 +38,11 @@ p {
   font-style: italic;
 }
 
-.blurb {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.5rem;
-
-  margin: 0 5px 5px 5px;
-}
-
 .bullet {
   flex: 0 0 1.25rem;
   line-height: 1;
 }
 
-.blurb p {
-  width: 68vw;
-  float: right;
-  margin: 0;
-}
-
-#card.isNotPhone .daterange {
-  margin: -10px 0 0 0;
-}
-.daterange,
 .title {
   margin: 2px;
 }
@@ -77,14 +55,14 @@ a {
   margin-top: 25px;
   color: $shining-red;
 }
-// a > span {
-//   background-color: white;
-// }
+a > span {
+  background-color: white;
+}
 
-// a > span:hover {
-//   cursor: pointer;
-//   background-color: transparent;
-// }
+a > span:hover {
+  cursor: pointer;
+  background-color: transparent;
+}
 
 .title {
   padding: 2px;
@@ -94,9 +72,8 @@ a {
   text-decoration: none;
 }
 
-// mobile chips
-
-details {
+details,
+article.role {
   margin-bottom: 20px;
 }
 
@@ -109,11 +86,6 @@ details.role,
   transition: border-color 0.2s ease;
 }
 
-.role:hover {
-  border-color: rgba(255, 255, 255, 0.18);
-}
-
-/* Summary row */
 .summary {
   display: grid;
   grid-template-columns: auto 1fr auto; /* chevron | content | chevron slot */
