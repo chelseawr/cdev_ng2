@@ -4,23 +4,16 @@
     <div id="card" class="hero">
       <h1 id="cardTitle">experience</h1>
 
-      @if (responsive.isPhonePortrait()) { @for (role of roles; track role.id) {
+      @if (responsive.isPhonePortrait()) { @for (role of roles; track role.id;
+      let i = $index) {
       <details
         class="role employer"
         [open]="openId === role.id"
         (click)="onToggle(role.id, $event)"
       >
-        <summary class="summary" [class.open]="openId === role.id">
-          <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M8 5l8 7-8 7"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
+        <summary class="summary" [class.odd]="i % 2 !== 0">
+          <fa-icon class="chevron" [icon]="iconFor(i, role)"></fa-icon>
+
           <div class="heading">
             <div class="title">{{ role.title }} @ {{ role.company }}</div>
             <div class="byline">{{ role.dates }}</div>
