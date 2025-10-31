@@ -96,16 +96,6 @@ export class App implements AfterViewInit, OnDestroy {
     this.visibilityObserver?.disconnect();
   }
 
-  // update page anchor onscroll
-  // ngDoCheck(): void {
-  //   if (this.activeId) {
-  //     const currentHash = window.location.hash.replace('#', '');
-  //     if (currentHash !== this.activeId) {
-  //       history.replaceState(null, '', `#${this.activeId}`);
-  //     }
-  //   }
-  // }
-
   onSectionInView(id: string) {
     if (this.activeId !== id) {
       this.activeId = id;
@@ -118,4 +108,5 @@ export class App implements AfterViewInit, OnDestroy {
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 }
+
 bootstrapApplication(App);

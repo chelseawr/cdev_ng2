@@ -72,8 +72,7 @@ a {
   text-decoration: none;
 }
 
-details,
-article.role {
+details {
   margin-bottom: 20px;
 }
 
@@ -169,4 +168,33 @@ details.role,
 /* Hide the left chevron for odd rows */
 .role.odd .bullets li::before {
   content: none;
+}
+.divider-line-dot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem auto;
+  width: 100%;
+  max-width: 200px;
+  position: relative;
+}
+
+.divider-line-dot::before,
+.divider-line-dot::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #ccc);
+}
+
+.divider-line-dot::after {
+  background: linear-gradient(to left, transparent, #ccc);
+}
+
+.divider-line-dot span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: $shining-red;
+  margin: 0 8px;
 }

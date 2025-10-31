@@ -1,22 +1,33 @@
 <section #watch id="slide5">
   <div class="veil"></div>
   <article class="card">
-    <div class="hero">
-      <h1 id="cardTitle">education</h1>
-      <div id="innerbox">
-        <div>
-          <h2>dakota state university</h2>
-          <h3>bachelors of computer science</h3>
+    <h1 id="cardTitle">education</h1>
+
+    <ol class="edu__list" role="list">
+      @for (item of items; track item.school) {
+      <li class="edu__row">
+        <!-- Left rail: timeline spine + node -->
+        <div class="edu__rail" aria-hidden="true">
+          <span class="edu__node"></span>
+          <span class="edu__spine"></span>
         </div>
-        <div>
-          <h2>Department of Labor Certification</h2>
-          <h3>internetworking technician</h3>
+
+        <!-- Content -->
+        <div class="edu__card">
+          <div class="edu__topline">
+            <h3 class="edu__school">{{ item.school }}</h3>
+            @if(item.inProgress){
+            <span class="edu__chip" aria-label="In progress" title="In progress"
+              >In progress</span
+            >
+            }
+          </div>
+
+          <div class="edu__credential">{{ item.credential }}</div>
+          <div class="edu__date" aria-label="Date">{{ item.date }}</div>
         </div>
-        <div>
-          <h2>portland community college</h2>
-          <h3>associates of general studies</h3>
-        </div>
-      </div>
-    </div>
+      </li>
+      }
+    </ol>
   </article>
 </section>

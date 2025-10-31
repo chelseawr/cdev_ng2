@@ -41,7 +41,9 @@ $shining-orange: rgb(223, 95, 24);
   transform: translateY(-2px);
   background-color: $shining-red;
 }
-
+.outsideLinks {
+  margin-top: 10px;
+}
 .outsideLinks span {
   font-size: 30px;
 }

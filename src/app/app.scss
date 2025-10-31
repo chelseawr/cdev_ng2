@@ -63,41 +63,6 @@ main {
   transform: scale(1.2);
 }
 
-/* Tiny top marker that scrolls with content */
-// .top-sentinel {
-//   display: block;
-//   height: 1px;
-// }
-// .nav {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   display: flex;
-//   gap: 0.75rem;
-//   justify-content: center;
-//   padding: 0.6rem 0.8rem;
-//   background: rgba(255, 255, 255, 0.92);
-//   border-bottom: 1px solid #ddd;
-//   opacity: 0;
-//   pointer-events: none;
-//   transition: opacity 180ms ease;
-//   z-index: 1000;
-// }
-// .nav.is-visible {
-//   opacity: 1;
-//   pointer-events: auto;
-// }
-// .nav .item a {
-//   text-decoration: none;
-//   color: #444;
-//   padding: 0.25rem 0.5rem;
-// }
-// .nav .item.active a {
-//   color: $shining-orange;
-//   border-bottom: 2px solid $shining-orange;
-// }
-
 .nav {
   position: fixed;
   top: 0;
