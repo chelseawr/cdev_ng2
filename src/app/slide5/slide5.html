@@ -2,25 +2,13 @@
   <div class="veil"></div>
   <article class="card">
     <h1 id="cardTitle">education</h1>
-    <ol class="edu__list" role="list">
-      @for (item of items; track item.school; let i = $index) {
-      <li class="edu__row" [class.odd]="i % 2 !== 0">
-        <div class="edu__card">
-          <div class="edu__topline">
-            <div class="heading">
-              <div class="title">{{ item.credential }} @ {{ item.school }}</div>
-              <div class="byline edu__date" aria-label="Date">
-                {{ item.date }}
-              </div>
-            </div>
-          </div>
-        </div>
-      </li>
-      }
-    </ol>
+    @for (item of items; track item.school; let i = $index) {
+    <div class="item" [class.odd]="i % 2 !== 0">
+      <div class="heading">
+        <div class="title">{{ item.credential }} @ {{ item.school }}</div>
+        <div class="daterange" aria-label="Date">{{ item.date }}</div>
+      </div>
+    </div>
+    }
   </article>
 </section>
-
-<!--
-clean up css
-slightly wider on mobile with card - diff min width if mobile -->
