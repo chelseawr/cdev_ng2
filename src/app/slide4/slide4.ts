@@ -50,7 +50,8 @@ export class Slide4 {
     {
       type: 'testing',
       icon: faFlask,
-      items: 'Playwright, Mockito, Pact, Cypress, Jest, ESLint',
+      items:
+        'Playwright, Mockito, React Testing Library, Pact, Cypress, Jest, ESLint',
     },
     {
       type: 'devOps & cloud',

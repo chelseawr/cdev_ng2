@@ -1,3 +1,14 @@
+$shining-red: rgb(152, 31, 36);
+$shining-orange: rgb(223, 95, 24);
+
 .ng-fa-icon {
-  color: rgb(223, 95, 24);
+  color: $shining-orange;
+}
+
+.bullets {
+  padding: 0 5px 10px 5px;
+}
+
+.card {
+  width: 73vw;
 }

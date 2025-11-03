@@ -11,11 +11,7 @@
         [open]="openId === role.id"
         [class.odd]="i % 2 !== 0"
       >
-        <summary
-          class="summary"
-          [class.odd]="i % 2 !== 0"
-          (click)="onToggle(role.id, $event)"
-        >
+        <summary [class.odd]="i % 2 !== 0" (click)="onToggle(role.id, $event)">
           <fa-icon class="chevron" [icon]="iconFor(i, role)"></fa-icon>
 
           <div class="heading">
@@ -61,6 +57,7 @@
           </ul>
         </div>
         @if(i!==3){
+        <!-- replace 3 with length of roles data -->
         <div class="divider-line-dot" aria-hidden="true"><span></span></div>
         }
       </article>

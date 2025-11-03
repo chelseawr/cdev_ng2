@@ -6,12 +6,11 @@
       @if (responsive.isPhonePortrait()) { @for (skill of skills; track
       skill.type; let i = $index) {
       <details
-        class="role employer"
+        class="mobileItem item"
         [open]="openType === skill.type"
         [class.odd]="i % 2 !== 0"
       >
         <summary
-          class="summary"
           [class.odd]="i % 2 !== 0"
           (click)="onToggle(skill.type, $event)"
         >
@@ -28,6 +27,18 @@
           <p class="bullets">{{skill.items}}</p>
         </div>
       </details>
+      } } @else { @for (skill of skills; track skill.type; let i = $index) {
+      <article [class.odd]="i % 2 !== 0" class="item">
+        <header>
+          <div>
+            <fa-icon [icon]="skill.icon" />
+            <div class="title">{{skill.type}}</div>
+          </div>
+        </header>
+        <div class="content">
+          <p class="bullets">{{skill.items}}</p>
+        </div>
+      </article>
       }}
     </div>
   </article>
