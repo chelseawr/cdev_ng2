@@ -41,7 +41,7 @@ section {
 }
 
 .card {
-  max-width: 75vw;
+  // max-width: 75vw;
   margin: auto;
   width: 85%;
   background: rgba(18, 18, 18, 0.55);
@@ -66,38 +66,34 @@ section {
 }
 
 // fancy clickable title hover
-a {
+.company {
   margin-bottom: 0;
   margin-top: 25px;
   color: $shining-red;
 }
-a > span {
+.company > span {
   background-color: white;
 }
 
-a > span:hover {
+.company > span:hover {
   cursor: pointer;
   background-color: transparent;
 }
 
-a {
+.company {
   text-decoration: none;
 }
 
 // clickable mobile box from slide3 experience
-
-#card .employer:nth-child(even),
-#card.isNotPhone .employer:nth-child(odd) .daterange {
+.item:nth-child(even) {
   text-align: left;
 }
 
-#card .employer:nth-child(odd),
-#card.isNotPhone .employer:nth-child(even) .daterange {
+.item:nth-child(odd) {
   text-align: right;
 }
 
-details.role,
-.role.desktop {
+.mobileItem {
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
   background: transparent;
@@ -172,8 +168,8 @@ details {
   font-size: 0.9rem;
 }
 
-/* Even rows (default): chevron on LEFT, pointing right (>) */
-.role:not(.odd) .bullets li::before {
+/* bullet even rows (default): chevron on LEFT, pointing right (>) */
+.item:not(.odd) .bullets li::before {
   content: ">";
   position: absolute;
   left: 4px;
@@ -184,8 +180,8 @@ details {
   color: $shining-orange;
 }
 
-/* Odd rows: chevron on RIGHT, pointing left (<) */
-.role.odd .bullets li::after {
+/* bullet odd rows: chevron on RIGHT, pointing left (<) */
+.item.odd .bullets li::after {
   content: "<";
   position: absolute;
   right: 4px;
@@ -195,8 +191,8 @@ details {
   font-family: monospace;
   color: $shining-orange;
 }
-/* Hide the left chevron for odd rows */
-.role.odd .bullets li::before {
+/* hide bullet left chevron for odd rows */
+.item.odd .bullets li::before {
   content: none;
 }
 
@@ -227,7 +223,7 @@ details {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: $shining-red;
+  background-color: $shining-orange;
   margin: 0 8px;
 }
 

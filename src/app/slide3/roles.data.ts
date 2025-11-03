@@ -25,7 +25,7 @@ export const ROLES: Role[] = [
     id: 'ie',
     title: 'Software Engineer',
     company: 'Internetwork Engineering',
-    companyUrl: 'ineteng.com',
+    companyUrl: 'https://ineteng.com',
     dates: 'September 2021 - October 2022',
     bullets: [
       'Developed a Python automation tool to save over $30,000 per client deployment',
@@ -37,7 +37,7 @@ export const ROLES: Role[] = [
     title: 'Junior Software Engineer',
     dates: 'July 2017 - September 2021',
     company: 'Bloomberg L.P.',
-    companyUrl: 'bloomberg.com',
+    companyUrl: 'https://bloomberg.com',
     bullets: [
       'Developed, maintained, and managed a metrics dashboard using React, NGINX and Flask with a small remote team.',
       'Pioneered the effort to secure the deployment pipeline and client facing code using Jenkins, Terser and Grunt.',

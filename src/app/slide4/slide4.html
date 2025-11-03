@@ -3,54 +3,32 @@
   <article class="card">
     <div class="hero">
       <h1 id="cardTitle">skills</h1>
-      <div id="innerbox">
-        <div>
-          <h2>
-            frontend
-            <span>
-              <fa-icon [fixedWidth]="true" [icon]="faDisplay"></fa-icon
-            ></span>
-          </h2>
-          React, Angular, Material UI, GoJS, MobX, TanStack, HighCharts, Zustand
+      @if (responsive.isPhonePortrait()) { @for (skill of skills; track
+      skill.type; let i = $index) {
+      <details
+        class="role employer"
+        [open]="openType === skill.type"
+        [class.odd]="i % 2 !== 0"
+      >
+        <summary
+          class="summary"
+          [class.odd]="i % 2 !== 0"
+          (click)="onToggle(skill.type, $event)"
+        >
+          <fa-icon class="chevron" [icon]="chevronIcon(i, skill)" />
+
+          <div class="heading">
+            <fa-icon [icon]="skill.icon" />
+            <div class="title">{{ skill.type}}</div>
+          </div>
+        </summary>
+
+        <div class="divider" role="presentation"></div>
+        <div class="content">
+          <p class="bullets">{{skill.items}}</p>
         </div>
-        <div>
-          <h2>
-            <span>
-              <fa-icon [fixedWidth]="true" [icon]="faDatabase"></fa-icon
-            ></span>
-            backend
-          </h2>
-          NodeJS, Vite, Jenkins, SpringBoot, NGINX, AWS, Gunicorn, NestJS, Flask
-        </div>
-        <div>
-          <h2>
-            testing<span>
-              <fa-icon [fixedWidth]="true" [icon]="faFlask"></fa-icon
-            ></span>
-          </h2>
-          Playwright, Mockito, Pact, Cypress, Jest, ESLint
-        </div>
-        <div>
-          <h2>
-            <span>
-              <fa-icon [fixedWidth]="true" [icon]="faCloud"></fa-icon
-            ></span>
-            devOps & cloud
-          </h2>
-          AWS (S3, CloudFront, Route 53, Amplify), Jenkins, ArgoCD, Docker,
-          Helm, Ansible, Splunk, Grafana, secrets management
-        </div>
-        <div>
-          <h2>
-            networking
-            <span>
-              <fa-icon [fixedWidth]="true" [icon]="faNetworkWired"></fa-icon
-            ></span>
-          </h2>
-          Scripting & Automation (Bash, PowerShell), Subnetting & VLANs, Linux &
-          Windows Server Administration, Disaster Recovery Planning
-        </div>
-      </div>
+      </details>
+      }}
     </div>
   </article>
 </section>

@@ -7,7 +7,7 @@
       @if (responsive.isPhonePortrait()) { @for (role of roles; track role.id;
       let i = $index) {
       <details
-        class="role employer"
+        class="mobileItem item"
         [open]="openId === role.id"
         [class.odd]="i % 2 !== 0"
       >
@@ -35,13 +35,13 @@
         </div>
       </details>
       } } @else { @for (role of roles; track role.id; let i = $index) {
-      <article class="role employer" [class.odd]="i % 2 !== 0">
+      <article [class.odd]="i % 2 !== 0" class="item">
         <header>
           <div>
             <div class="title">
               {{ role.title }} @
               <a
-                href="{{role.companyUrl}}"
+                [href]="role.companyUrl"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="btn company"
