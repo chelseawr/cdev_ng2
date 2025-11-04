@@ -1,6 +1,5 @@
-$shining-red: rgb(152, 31, 36);
-$shining-orange: rgb(223, 95, 24);
-
+$xmas-red: #f44034ff;
+$xmas-green: #4cae4fff;
 :host-context(.desktop) #slide1 {
   width: 90vw;
 }
@@ -26,7 +25,7 @@ $shining-orange: rgb(223, 95, 24);
   font-family: "Chakra Petch", sans-serif;
 }
 #name {
-  color: $shining-red;
+  color: $xmas-red;
 }
 #name > span {
   background-color: white;
@@ -35,7 +34,7 @@ $shining-orange: rgb(223, 95, 24);
   display: inline-block;
   color: black;
   padding: 5px;
-  background-color: $shining-orange;
+  background-color: $xmas-green;
   border-radius: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.2s ease-in-out;
@@ -44,7 +43,7 @@ $shining-orange: rgb(223, 95, 24);
 .btn:hover {
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
   transform: translateY(-2px);
-  background-color: $shining-red;
+  background-color: $xmas-red;
 }
 .outsideLinks {
   margin-top: 10px;

@@ -1,6 +1,5 @@
-// TODO make theme colors global
-$shining-red: rgb(152, 31, 36);
-$shining-orange: rgb(223, 95, 24);
+$xmas-red: #f44034ff;
+$xmas-green: #4cae4fff;
 
 #hello {
   margin-bottom: 0;
@@ -8,7 +7,7 @@ $shining-orange: rgb(223, 95, 24);
 }
 
 #name {
-  color: $shining-red;
+  color: $xmas-red;
   font-size: xxx-large;
   margin-top: 0;
 }
@@ -54,9 +53,9 @@ main {
 }
 
 .pager .dot.active {
-  background: $shining-orange;
+  background: $xmas-green;
   transform: scale(1.35);
-  box-shadow: 0 0 0 4px #ca6d0a45;
+  box-shadow: 0 0 0 4px #50b15324;
 }
 
 .pager .dot:hover {
@@ -91,6 +90,6 @@ main {
 }
 
 .nav .item.active a {
-  color: $shining-orange;
-  border-bottom: 2px solid $shining-orange;
+  color: $xmas-green;
+  border-bottom: 2px solid $xmas-green;
 }
