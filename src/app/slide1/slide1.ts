@@ -17,8 +17,8 @@ import { ResponsiveService } from '../responsive.service';
 export class Slide1 {
   constructor(public responsive: ResponsiveService) {}
   sourcePath =
-    'https://public-cdev.s3.us-east-2.amazonaws.com/May2024-resume.pdf';
-  fileName = 'May2024-resume.pdf';
+    'https://public-cdev.s3.us-east-2.amazonaws.com/ChelseaMay2025resume.pdf';
+  fileName = 'ChelseaMay2025resume.pdf';
 
   faLinkedin = faLinkedin;
   faGithub = faGithub;
