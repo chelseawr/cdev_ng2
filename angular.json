@@ -14,11 +14,12 @@
           "options": {
             "outputPath": "dist/cdev_ng2",
             "index": "src/index.html",
-            "main": "src/main.ts",
+            "main": "src/app/app.component.ts",
+            "baseHref": "/",
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.css"],
+            "styles": ["src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -47,12 +48,12 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "port": 4200
-          },
           "configurations": {
             "production": {
               "buildTarget": "cdev_ng2:build:production"
+            },
+            "development": {
+              "buildTarget": "cdev_ng2:build:development"
             }
           },
           "defaultConfiguration": "production"
@@ -64,6 +65,11 @@
           }
         }
       }
+    }
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "style": "scss"
     }
   },
   "cli": {
