@@ -16,12 +16,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   styleUrl: './slide6.scss',
 })
 export class Slide6 {
-  constructor(public responsive: ResponsiveService) {}
   faArrowLeft = faArrowLeft;
   faArrowRight = faArrowRight;
   faChevronLeft = faChevronLeft;
   faChevronRight = faChevronRight;
   faChevronDown = faChevronDown;
+
+  // make this a global service
   iconFor(i: number, p: any): IconDefinition {
     const isOpen = this.openId === p.id;
     return isOpen
@@ -30,6 +31,7 @@ export class Slide6 {
       ? faChevronRight
       : faChevronLeft;
   }
+
   projects = [
     {
       id: 'farm',
@@ -50,7 +52,7 @@ export class Slide6 {
     {
       id: 'pandas',
       title: 'Messenger Data Analyzer',
-      image: '',
+      image: 'assets/pandas.png',
       aboutText:
         'A Python project from 2022 using Pandas + Plotly to explore exported Facebook Messenger data. Provides interactive CLI menus and visualizations for message stats, top contacts, and activity pattern',
     },
@@ -59,7 +61,7 @@ export class Slide6 {
       title: 'Smart Mirror',
       aboutText:
         'A wall-mounted dashboard app rebuilt in 2022 with Angular 13 after an early 2019 version using AngularJS. Aggregates APIs for weather, commute times, to-do lists, and calendars into a real-time home display.',
-      image: '',
+      image: 'assets/mirror.png',
     },
   ];
 

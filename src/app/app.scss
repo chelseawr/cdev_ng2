@@ -24,7 +24,7 @@ main {
   -webkit-overflow-scrolling: touch;
 }
 
-.item {
+.navitem {
   list-style: none;
 }
 
@@ -83,13 +83,13 @@ main {
   pointer-events: auto;
 }
 
-.nav .item a {
+.nav .navitem a {
   text-decoration: none;
   color: white;
   padding: 0.25rem 0.5rem;
 }
 
-.nav .item.active a {
+.nav .navitem.active a {
   color: $xmas-green;
   border-bottom: 2px solid $xmas-green;
 }

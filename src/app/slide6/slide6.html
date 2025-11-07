@@ -3,14 +3,8 @@
   <article class="card" id="slide6">
     <div id="card" class="hero">
       <h1 id="cardTitle">projects</h1>
-      @for (p of projects; track p.id; let i = $index) { @if
-      (responsive.isPhonePortrait()) {
-      <details
-        class="mobileItem item"
-        [open]="openId === p.id"
-        (click)="onToggle(p.id, $event)"
-        [class.odd]="i % 2 !== 0"
-      >
+      @for (p of projects; track p.id; let i = $index) {
+      <details class="item" [open]="openId === p.id" [class.odd]="i % 2 !== 0">
         <summary [class.odd]="i % 2 !== 0" (click)="onToggle(p.id, $event)">
           <fa-icon class="chevron" [icon]="iconFor(i, p)" />
 
@@ -24,29 +18,9 @@
 
         <div class="blurb">
           <p>{{p.aboutText}}</p>
-
-          <!-- add link to github or live site -->
         </div>
       </details>
-      } @else {
-      <article [class.odd]="i % 2 !== 0" class="item">
-        <h2 class="title">{{ p.title }}</h2>
-        <div class="thing" [class.odd]="i % 2 !== 0">
-          <a [href]="p.link" target="_blank" rel="noopener noreferrer">
-            <img
-              class="thumb"
-              [src]="p.image || 'assets/placeholders/data-placeholder.svg'"
-          /></a>
-          <div class="blurb">
-            <p>{{p.aboutText}}</p>
-          </div>
-        </div>
-        @if(i!==3){
-        <!-- replace 3 with length of roles data -->
-        <div class="divider-line-dot" aria-hidden="true"><span></span></div>
-        }
-      </article>
-      } }
+      }
     </div>
   </article>
 </section>

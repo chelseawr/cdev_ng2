@@ -3,12 +3,10 @@
   <article class="card" id="slide3">
     <div id="card" class="hero">
       <h1 id="cardTitle">experience</h1>
-
-      @for (role of roles; track role.id; let i = $index) { @if
-      (responsive.isPhonePortrait()) {
+      @for (role of roles; track role.id; let i = $index) {
 
       <details
-        class="mobileItem item"
+        class="item"
         [open]="openId === role.id"
         [class.odd]="i % 2 !== 0"
       >
@@ -21,9 +19,7 @@
           </div>
         </summary>
 
-        <div class="divider" role="presentation"></div>
-
-        <div class="content">
+        <div class="content blurb">
           <ul class="bullets">
             @for (b of role.bullets; track b) {
             <li [innerHTML]="b"></li>
@@ -31,39 +27,7 @@
           </ul>
         </div>
       </details>
-      } @else{
-      <article [class.odd]="i % 2 !== 0" class="item">
-        <header>
-          <div>
-            <div class="title">
-              {{ role.title }} @
-              <a
-                [href]="role.companyUrl"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn company"
-                title="{{role.company}}"
-                ><span>{{ role.company }}</span></a
-              >
-            </div>
-            <div class="daterange">{{ role.dates }}</div>
-          </div>
-        </header>
-        <div class="divider" role="presentation"></div>
-        <div class="content">
-          <ul class="bullets">
-            @for (b of role.bullets; track b) {
-            <li [innerHTML]="b"></li>
-            }
-          </ul>
-        </div>
-        @if(i!==3){
-        <!-- replace 3 with length of roles data -->
-        <div class="divider-line-dot" aria-hidden="true"><span></span></div>
-        }
-      </article>
-
-      } }
+      }
     </div>
   </article>
 </section>
