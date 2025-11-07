@@ -33,8 +33,8 @@ export class Slide6 {
   projects = [
     {
       id: 'farm',
-      title: 'Farm Commerce Site',
-      link: 'www.haymayfarm.com',
+      title: 'Hay May Farm',
+      link: 'https://www.haymayfarm.com',
       image: 'assets/farm-cap.JPG',
       aboutText:
         'The public site for our family farm, built with React 20 and Vite for fast client-side rendering. Deployed on AWS S3 + CloudFront with a simple, responsive design that continues to evolve as we expand the farm’s offerings.',
@@ -42,7 +42,7 @@ export class Slide6 {
     {
       id: 'portfolio',
       title: 'Portfolio Website',
-      link: '/',
+      link: 'https://chelsea.dev/',
       image: 'assets/portfolio-cap.JPG',
       aboutText:
         'This portfolio is itself a live example of my front-end work, first launched in 2024 and iterated through multiple UI updates. Features a collapsible mobile UX built with Angular’s new template control flow and a custom responsive service.',
