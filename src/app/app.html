@@ -1,0 +1,103 @@
+<main>
+  <div #topSentinel class="top-sentinel" aria-hidden="true"></div>
+  @if (responsive.isPhonePortrait()){
+  <!-- Mobile/portrait: right-side pager dots -->
+  <nav class="pager" aria-label="Sections">
+    <button
+      type="button"
+      class="dot"
+      [class.active]="activeId === 'slide1'"
+      aria-label="Slide 1"
+      [attr.aria-current]="activeId === 'slide1' ? 'true' : null"
+      (click)="scrollTo('slide1')"
+    ></button>
+
+    <button
+      type="button"
+      class="dot"
+      [class.active]="activeId === 'slide2'"
+      aria-label="Slide 2"
+      [attr.aria-current]="activeId === 'slide2' ? 'true' : null"
+      (click)="scrollTo('slide2')"
+    ></button>
+
+    <button
+      type="button"
+      class="dot"
+      [class.active]="activeId === 'slide3'"
+      aria-label="Slide 3"
+      [attr.aria-current]="activeId === 'slide3' ? 'true' : null"
+      (click)="scrollTo('slide3')"
+    ></button>
+
+    <button
+      type="button"
+      class="dot"
+      [class.active]="activeId === 'slide4'"
+      aria-label="Slide 4"
+      [attr.aria-current]="activeId === 'slide4' ? 'true' : null"
+      (click)="scrollTo('slide4')"
+    ></button>
+
+    <button
+      type="button"
+      class="dot"
+      [class.active]="activeId === 'slide6'"
+      aria-label="Slide 6"
+      [attr.aria-current]="activeId === 'slide6' ? 'true' : null"
+      (click)="scrollTo('slide6')"
+    ></button>
+  </nav>
+  } @else {
+  <ul class="nav" [class.is-visible]="navVisible">
+    <li class="navitem" [class.active]="activeId === 'slide1'">
+      <a href="#slide1">home</a>
+    </li>
+    <li class="navitem" [class.active]="activeId === 'slide2'">
+      <a href="#slide2">intro</a>
+    </li>
+    <li class="navitem" [class.active]="activeId === 'slide3'">
+      <a href="#slide3">experience</a>
+    </li>
+    <li class="navitem" [class.active]="activeId === 'slide4'">
+      <a href="#slide4">skills</a>
+    </li>
+    <li class="navitem" [class.active]="activeId === 'slide6'">
+      <a href="#slide6">projects</a>
+    </li>
+  </ul>
+  }
+
+  <app-slide1
+    [scrollSpySection]="'slide1'"
+    (inView)="onSectionInView($event)"
+  ></app-slide1>
+  <app-slide2
+    [scrollSpySection]="'slide2'"
+    (inView)="onSectionInView($event)"
+  ></app-slide2
+  ><app-slide3
+    [scrollSpySection]="'slide3'"
+    (inView)="onSectionInView($event)"
+  ></app-slide3>
+  <app-slide4
+    [scrollSpySection]="'slide4'"
+    (inView)="onSectionInView($event)"
+  ></app-slide4>
+  <app-slide6
+    [scrollSpySection]="'slide6'"
+    (inView)="onSectionInView($event)"
+  ></app-slide6>
+</main>
+<!--
+
+replace education slide5 with projects slide 6
+mobile and desktop
+
+
+later
+pro icons fancy
+page anchors match actual titles
+fancy a href on education desktop page
+basic test coverage
+readme writeup-->

@@ -1,0 +1,35 @@
+<section #watch class="hero">
+  <div class="veil"></div>
+  <article class="card stack" id="slide1">
+    <h1 class="name">Chelsea May</h1>
+    <h4 class="subtitle">software engineer</h4>
+
+    <nav class="cta">
+      <a class="btn" [href]="links.contact">Email Me</a>
+      <a class="btn" [href]="links.github" target="_blank" rel="noopener"
+        >GitHub</a
+      >
+      <a class="btn" [href]="links.linkedin" target="_blank" rel="noopener"
+        >LinkedIn</a
+      >
+      <a
+        [href]="links.resume"
+        [download]="links.fileName"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn socials"
+        title="View Resume"
+        >Résumé</a
+      >
+    </nav>
+  </article>
+  <span id="arrow">
+    <fa-icon
+      [fixedWidth]="true"
+      [icon]="faArrow"
+      class="pulse-arrow"
+      (click)="scrollTo('slide2')"
+    >
+    </fa-icon>
+  </span>
+</section>

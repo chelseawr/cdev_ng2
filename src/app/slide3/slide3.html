@@ -1,0 +1,33 @@
+<section #watch>
+  <div class="veil"></div>
+  <article class="card" id="slide3">
+    <div id="card" class="hero">
+      <h1 id="cardTitle">experience</h1>
+      @for (role of roles; track role.id; let i = $index) {
+
+      <details
+        class="item"
+        [open]="openId === role.id"
+        [class.odd]="i % 2 !== 0"
+      >
+        <summary [class.odd]="i % 2 !== 0" (click)="onToggle(role.id, $event)">
+          <fa-icon class="chevron" [icon]="iconFor(i, role)"></fa-icon>
+
+          <div class="heading">
+            <div class="title">{{ role.title }} @ {{ role.company }}</div>
+            <div class="daterange">{{ role.dates }}</div>
+          </div>
+        </summary>
+
+        <div class="content blurb">
+          <ul class="bullets">
+            @for (b of role.bullets; track b) {
+            <li [innerHTML]="b"></li>
+            }
+          </ul>
+        </div>
+      </details>
+      }
+    </div>
+  </article>
+</section>
