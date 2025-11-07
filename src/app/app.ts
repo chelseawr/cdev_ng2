@@ -18,6 +18,7 @@ import {
   Directive,
 } from '@angular/core';
 import { ResponsiveService } from './responsive.service';
+import { Slide6 } from './slide6/slide6';
 
 @Directive({
   selector: '[scrollSpySection]',
@@ -67,6 +68,7 @@ export class ScrollSpySectionDirective implements AfterViewInit, OnDestroy {
     Slide3,
     Slide4,
     Slide5,
+    Slide6,
     ScrollSpySectionDirective,
   ],
 })

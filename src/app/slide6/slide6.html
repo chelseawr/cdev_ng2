@@ -1,0 +1,57 @@
+<section #watch>
+  <div class="veil"></div>
+  <article class="card" id="slide6">
+    <div id="card" class="hero">
+      <h1 id="cardTitle">projects</h1>
+      @for (p of projects; track p.id; let i = $index) { @if
+      (responsive.isPhonePortrait()) {
+      <details
+        class="mobileItem item"
+        [open]="openId === p.id"
+        (click)="onToggle(p.id, $event)"
+        [class.odd]="i % 2 !== 0"
+      >
+        <summary [class.odd]="i % 2 !== 0" (click)="onToggle(p.id, $event)">
+          <fa-icon class="chevron" [icon]="iconFor(i, p)"></fa-icon>
+
+          <img
+            class="thumb"
+            [src]="p.image || 'assets/placeholders/data-placeholder.svg'"
+            [alt]="p.title"
+          />
+          <h3 class="title">{{ p.title }}</h3>
+        </summary>
+
+        <div class="blurb">
+          <p>{{p.aboutText}}</p>
+          @if(p.link){
+          <p>{{p.link}}</p>
+          }
+          <!-- add link to github or live site -->
+        </div>
+      </details>
+      } @else {
+      <article [class.odd]="i % 2 !== 0" class="item">
+        <div>
+          <img
+            class="thumb"
+            [src]="p.image || 'assets/placeholders/data-placeholder.svg'"
+          />
+          <h3 class="title">{{ p.title }}</h3>
+        </div>
+
+        <div class="blurb">
+          <p>{{p.aboutText}}</p>
+          @if(p.link){
+          <p>{{p.link}}</p>
+          }
+        </div>
+        @if(i!==3){
+        <!-- replace 3 with length of roles data -->
+        <div class="divider-line-dot" aria-hidden="true"><span></span></div>
+        }
+      </article>
+      } }
+    </div>
+  </article>
+</section>

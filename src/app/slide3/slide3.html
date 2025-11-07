@@ -4,8 +4,9 @@
     <div id="card" class="hero">
       <h1 id="cardTitle">experience</h1>
 
-      @if (responsive.isPhonePortrait()) { @for (role of roles; track role.id;
-      let i = $index) {
+      @for (role of roles; track role.id; let i = $index) { @if
+      (responsive.isPhonePortrait()) {
+
       <details
         class="mobileItem item"
         [open]="openId === role.id"
@@ -30,7 +31,7 @@
           </ul>
         </div>
       </details>
-      } } @else { @for (role of roles; track role.id; let i = $index) {
+      } @else{
       <article [class.odd]="i % 2 !== 0" class="item">
         <header>
           <div>

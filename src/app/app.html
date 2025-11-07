@@ -42,10 +42,10 @@
     <button
       type="button"
       class="dot"
-      [class.active]="activeId === 'slide5'"
-      aria-label="Slide 5"
-      [attr.aria-current]="activeId === 'slide5' ? 'true' : null"
-      (click)="scrollTo('slide5')"
+      [class.active]="activeId === 'slide6'"
+      aria-label="Slide 6"
+      [attr.aria-current]="activeId === 'slide6' ? 'true' : null"
+      (click)="scrollTo('slide6')"
     ></button>
   </nav>
   } @else {
@@ -62,8 +62,8 @@
     <li class="item" [class.active]="activeId === 'slide4'">
       <a href="#slide4">skills</a>
     </li>
-    <li class="item" [class.active]="activeId === 'slide5'">
-      <a href="#slide5">education</a>
+    <li class="item" [class.active]="activeId === 'slide6'">
+      <a href="#slide6">projects</a>
     </li>
   </ul>
   }
@@ -84,12 +84,16 @@
     [scrollSpySection]="'slide4'"
     (inView)="onSectionInView($event)"
   ></app-slide4>
-  <app-slide5
-    [scrollSpySection]="'slide5'"
+  <app-slide6
+    [scrollSpySection]="'slide6'"
     (inView)="onSectionInView($event)"
-  ></app-slide5>
+  ></app-slide6>
 </main>
 <!--
+
+replace education slide5 with projects slide 6
+mobile and desktop
+
 
 later
 pro icons fancy
