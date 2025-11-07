@@ -1,56 +1,114 @@
 $xmas-red: #f44034ff;
 $xmas-green: #4cae4fff;
-:host-context(.desktop) #slide1 {
-  width: 90vw;
+.contactbtn {
+  color: white;
+  margin-bottom: 20px;
+  transition: background-color 0.5s ease-out;
+  background-color: $xmas-red;
+  span {
+    color: white;
+    text-decoration: none;
+    font-family: "Chakra Petch";
+    font-size: 40px;
+  }
+}
+.contactbtn:hover {
+  background-color: $xmas-green;
 }
 
-:host-context(.phone-portrait) #hello {
-  font-size: 6vw;
+a {
+  text-decoration: none;
+  white-space: nowrap;
+}
+/* Google Font: tall, condensed, design-y */
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+/* Full-bleed hero; mobile-first */
+.hero {
+  min-height: 70vh;
+  display: grid;
+  place-items: center;
+  padding: clamp(16px, 5vw, 48px);
+  text-align: center;
 }
 
-:host-context(.desktop) #hello {
-  font-size: 3vw;
+/* Stack keeps content tight and centered */
+.stack {
+  display: grid;
+  gap: clamp(10px, 2.5vw, 18px);
+  justify-items: center;
 }
 
-.btn:nth-child(2) {
-  margin: 0 20px 0 20px;
+/* Big, tall nameplate with gradient text */
+.name {
+  margin: 0;
+  font-family: "Russo One", system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 0.9;
+  text-transform: uppercase;
+  font-size: clamp(48px, 14vw, 140px); /* mobile → desktop */
+  background: linear-gradient(
+    90deg,
+    #c8102e 0%,
+    /* deep red */ #ff4d4f 18%,
+    #1e7f3a 55%,
+    /* evergreen */ #2ebc66 85%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* tiny shadow for contrast on busy backs */
+  text-shadow: 0 0 0.01px rgba(0, 0, 0, 0.01);
 }
 
-.card {
-  max-width: 650px;
+/* Smaller supporting line */
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(14px, 4.2vw, 22px);
 }
 
-#name,
-#hello {
-  font-family: "Chakra Petch", sans-serif;
+/* CTA buttons: mobile-first, full width; wrap on wider screens */
+.cta {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  width: min(520px, 100%);
+  margin-top: clamp(8px, 2.5vw, 16px);
 }
-#name {
-  color: $xmas-red;
-}
-#name > span {
-  background-color: white;
-}
+
 .btn {
   display: inline-block;
-  color: black;
-  padding: 5px;
-  background-color: $xmas-green;
-  border-radius: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.2s ease-in-out;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: var(--btn-bg);
+  color: var(--btn-ink);
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: background 160ms ease, transform 120ms ease;
 }
 
 .btn:hover {
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-  transform: translateY(-2px);
-  background-color: $xmas-red;
+  background: var(--btn-bg-hover);
 }
-.outsideLinks {
-  margin-top: 10px;
+.btn:active {
+  transform: translateY(1px);
 }
-.outsideLinks span {
-  font-size: 30px;
+
+.btn.primary {
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-ink);
+  border-color: transparent;
 }
+
+@media (min-width: 640px) {
+  .cta {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 #arrow {
   text-align: center;
   margin-top: 10vh;
