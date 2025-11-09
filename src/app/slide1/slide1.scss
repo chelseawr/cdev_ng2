@@ -1,38 +1,12 @@
 $xmas-red: #f44034ff;
 $xmas-green: #4cae4fff;
-.contactbtn {
-  color: white;
-  margin-bottom: 20px;
-  transition: background-color 0.5s ease-out;
-  background-color: $xmas-red;
-  span {
-    color: white;
-    text-decoration: none;
-    font-family: "Chakra Petch";
-    font-size: 40px;
-  }
-}
-.contactbtn:hover {
-  background-color: $xmas-green;
-}
 
-a {
-  text-decoration: none;
-  white-space: nowrap;
-}
-/* Google Font: tall, condensed, design-y */
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-
-/* Full-bleed hero; mobile-first */
 .hero {
-  min-height: 70vh;
   display: grid;
   place-items: center;
-  padding: clamp(16px, 5vw, 48px);
   text-align: center;
 }
 
-/* Stack keeps content tight and centered */
 .stack {
   display: grid;
   gap: clamp(10px, 2.5vw, 18px);
@@ -58,18 +32,15 @@ a {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  /* tiny shadow for contrast on busy backs */
   text-shadow: 0 0 0.01px rgba(0, 0, 0, 0.01);
 }
 
-/* Smaller supporting line */
 .subtitle {
   margin: 0;
   color: var(--muted);
   font-size: clamp(14px, 4.2vw, 22px);
 }
 
-/* CTA buttons: mobile-first, full width; wrap on wider screens */
 .cta {
   display: grid;
   grid-template-columns: 1fr;
@@ -77,7 +48,6 @@ a {
   width: min(520px, 100%);
   margin-top: clamp(8px, 2.5vw, 16px);
 }
-
 .btn {
   display: inline-block;
   padding: 10px 14px;
@@ -89,18 +59,11 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.12);
   transition: background 160ms ease, transform 120ms ease;
 }
-
 .btn:hover {
   background: var(--btn-bg-hover);
 }
 .btn:active {
   transform: translateY(1px);
-}
-
-.btn.primary {
-  background: var(--btn-primary-bg);
-  color: var(--btn-primary-ink);
-  border-color: transparent;
 }
 
 @media (min-width: 640px) {
