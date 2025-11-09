@@ -1,28 +1,31 @@
-<section #watch class="hero">
+<section #watch>
   <div class="veil"></div>
-  <article class="card stack" id="slide1">
-    <h1 class="name">Chelsea May</h1>
-    <h4 class="subtitle">software engineer</h4>
+  <article class="card" id="slide1">
+    <div class="hero">
+      <h1 class="name">Chelsea May</h1>
+      <h4 class="subtitle">software engineer</h4>
 
-    <nav class="cta">
-      <a class="btn" [href]="links.contact">Email Me</a>
-      <a class="btn" [href]="links.github" target="_blank" rel="noopener"
-        >GitHub</a
-      >
-      <a class="btn" [href]="links.linkedin" target="_blank" rel="noopener"
-        >LinkedIn</a
-      >
-      <a
-        [href]="links.resume"
-        [download]="links.fileName"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn socials"
-        title="View Resume"
-        >Résumé</a
-      >
-    </nav>
+      <nav class="cta">
+        <a class="btn" [href]="links.contact">Email Me</a>
+        <a class="btn" [href]="links.github" target="_blank" rel="noopener"
+          >GitHub</a
+        >
+        <a class="btn" [href]="links.linkedin" target="_blank" rel="noopener"
+          >LinkedIn</a
+        >
+        <a
+          [href]="links.resume"
+          [download]="links.fileName"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn socials"
+          title="View Resume"
+          >Résumé</a
+        >
+      </nav>
+    </div>
   </article>
+
   <span id="arrow">
     <fa-icon
       [fixedWidth]="true"
