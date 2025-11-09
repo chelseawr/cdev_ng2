@@ -1,0 +1,26 @@
+<section #watch>
+  <div class="veil"></div>
+  <article class="card" id="slide6">
+    <div id="card" class="hero">
+      <h1 id="cardTitle">projects</h1>
+      @for (p of projects; track p.id; let i = $index) {
+      <details class="item" [open]="openId === p.id" [class.odd]="i % 2 !== 0">
+        <summary [class.odd]="i % 2 !== 0" (click)="onToggle(p.id, $event)">
+          <fa-icon class="chevron" [icon]="iconFor(i, p)" />
+
+          <img
+            class="thumb"
+            [src]="p.image || 'assets/placeholders/data-placeholder.svg'"
+            [alt]="p.title"
+          />
+          <h3 class="title">{{ p.title }}</h3>
+        </summary>
+
+        <div class="blurb">
+          <p>{{p.aboutText}}</p>
+        </div>
+      </details>
+      }
+    </div>
+  </article>
+</section>

@@ -8,7 +8,7 @@ frontend:
         - npm cache clean --force
         - nvm install 22.21.0
         - nvm use 22.21.0
-        - rm -f ~/.npmrc || true
+        # - rm -f ~/.npmrc || true
         - npm config delete @fortawesome:registry || true
         - npm install -g aws-cdk
         - npm install -g @angular/cli

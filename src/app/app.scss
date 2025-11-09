@@ -1,0 +1,95 @@
+$xmas-red: #f44034ff;
+$xmas-green: #4cae4fff;
+
+#hello {
+  margin-bottom: 0;
+  font-size: 1em;
+}
+
+#name {
+  color: $xmas-red;
+  font-size: xxx-large;
+  margin-top: 0;
+}
+
+h1,
+h2 {
+  font-family: "Lekton", sans-serif;
+}
+
+main {
+  height: 100%;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory; /* Vertical full-page snap */
+  -webkit-overflow-scrolling: touch;
+}
+
+.navitem {
+  list-style: none;
+}
+
+/* Right-side pager dots (desktop/tablet) */
+.pager {
+  position: fixed;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  display: grid;
+  gap: 10px;
+  z-index: 1000;
+  pointer-events: none; /* container ignores clicks */
+}
+
+.pager .dot {
+  pointer-events: auto; /* buttons themselves can be clicked */
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 0;
+  background: #c7ccd4;
+  box-shadow: 0 0 0 2px transparent;
+  transition: transform 140ms ease, background 140ms ease, box-shadow 140ms ease;
+  cursor: pointer;
+}
+
+.pager .dot.active {
+  background: $xmas-green;
+  transform: scale(1.35);
+  box-shadow: 0 0 0 4px #50b15324;
+}
+
+.pager .dot:hover {
+  transform: scale(1.2);
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-rows: repeat(4, 40px);
+  justify-items: center;
+  align-items: center;
+  z-index: 10;
+  background-color: var(--dark-blue);
+  opacity: 0;
+  transition: opacity 0.3s;
+  background-color: #000;
+  padding: 20px 10px;
+}
+
+.nav.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.nav .navitem a {
+  text-decoration: none;
+  color: white;
+  padding: 0.25rem 0.5rem;
+}
+
+.nav .navitem.active a {
+  color: $xmas-green;
+  border-bottom: 2px solid $xmas-green;
+}

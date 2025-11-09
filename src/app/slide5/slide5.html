@@ -1,0 +1,14 @@
+<section #watch id="slide5">
+  <div class="veil"></div>
+  <article class="card">
+    <h1 id="cardTitle">education</h1>
+    @for (item of items; track item.school; let i = $index) {
+    <div class="item" [class.odd]="i % 2 !== 0">
+      <div class="heading">
+        <div class="title">{{ item.credential }} @ {{ item.school }}</div>
+        <div class="daterange" aria-label="Date">{{ item.date }}</div>
+      </div>
+    </div>
+    }
+  </article>
+</section>

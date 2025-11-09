@@ -1,0 +1,31 @@
+<section #watch id="slide4">
+  <div class="veil"></div>
+  <article class="card">
+    <div class="hero">
+      <h1 id="cardTitle">skills</h1>
+      @for (skill of skills; track skill.type; let i = $index) {
+      <details
+        class="item"
+        [open]="openType === skill.type"
+        [class.odd]="i % 2 !== 0"
+      >
+        <summary
+          [class.odd]="i % 2 !== 0"
+          (click)="onToggle(skill.type, $event)"
+        >
+          <fa-icon class="chevron" [icon]="chevronIcon(i, skill)" />
+
+          <div class="heading">
+            <fa-icon [icon]="skill.icon" />
+            <div class="title">{{ skill.type}}</div>
+          </div>
+        </summary>
+
+        <div class="blurb">
+          <p>{{skill.items}}</p>
+        </div>
+      </details>
+      }
+    </div>
+  </article>
+</section>

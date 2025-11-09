@@ -1,0 +1,20 @@
+.thumb {
+  width: 100px;
+  height: 65px;
+  border-radius: 6px;
+  object-fit: cover;
+  background: rgba(255, 255, 255, 0.05);
+  flex-shrink: 0;
+}
+
+.thing {
+  display: flex;
+}
+
+.thing.odd {
+  flex-direction: row-reverse;
+}
+
+.blurb {
+  flex-grow: 2;
+}
