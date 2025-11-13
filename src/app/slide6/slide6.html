@@ -4,7 +4,7 @@
     <div id="card" class="hero">
       <h1 id="cardTitle">projects</h1>
       @for (p of projects; track p.id; let i = $index) {
-      <details class="item" [open]="openId === p.id" [class.odd]="i % 2 !== 0">
+      <details class="item" [open]="openId === p.id">
         <summary [class.odd]="i % 2 !== 0" (click)="onToggle(p.id, $event)">
           <fa-icon class="chevron" [icon]="iconFor(i, p)" />
 
@@ -17,6 +17,17 @@
         </summary>
 
         <div class="blurb">
+          @if(p.link){
+          <a
+            class="btn projectBtn"
+            [href]="p.link"
+            [class.odd]="i % 2 !== 0"
+            target="_blank"
+            rel="noopener"
+          >
+            {{ p.link.includes('github') ? 'View Code' : 'Visit Site' }}</a
+          >
+          }
           <p>{{p.aboutText}}</p>
         </div>
       </details>

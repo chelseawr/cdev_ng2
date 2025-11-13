@@ -44,7 +44,7 @@ export class Slide6 {
     {
       id: 'portfolio',
       title: 'Portfolio Website',
-      link: 'https://chelsea.dev/',
+      link: 'https://github.com/chelseawr/cdev_ng2',
       image: 'assets/portfolio-cap.JPG',
       aboutText:
         'This portfolio is itself a live example of my front-end work, first launched in 2024 and iterated through multiple UI updates. Features a collapsible mobile UX built with Angular’s new template control flow and a custom responsive service.',
@@ -52,6 +52,7 @@ export class Slide6 {
     {
       id: 'pandas',
       title: 'Messenger Data Analyzer',
+      link: 'https://github.com/chelseawr/messenger_analysis',
       image: 'assets/pandas.png',
       aboutText:
         'A Python project from 2022 using Pandas + Plotly to explore exported Facebook Messenger data. Provides interactive CLI menus and visualizations for message stats, top contacts, and activity pattern',

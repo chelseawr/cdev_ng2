@@ -18,3 +18,11 @@
 .blurb {
   flex-grow: 2;
 }
+
+.projectBtn.odd {
+  margin-right: 48vw;
+}
+
+.projectBtn:not(.odd) {
+  margin-left: 48vw;
+}

@@ -205,33 +205,21 @@ summary.odd {
   content: none;
 }
 
-// desktop fancy divider
-.divider-line-dot {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 1.5rem auto;
-  width: 100%;
-  max-width: 200px;
-  position: relative;
+.btn {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: transparent;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: background 160ms ease, transform 120ms ease;
 }
 
-.divider-line-dot::before,
-.divider-line-dot::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(to right, transparent, #ccc);
+.btn:hover {
+  background: rgba(255, 255, 255, 0.12);
 }
-
-.divider-line-dot::after {
-  background: linear-gradient(to left, transparent, #ccc);
-}
-
-.divider-line-dot span {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: $xmas-green;
-  margin: 0 8px;
+.btn:active {
+  transform: translateY(1px);
 }
