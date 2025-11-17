@@ -29,6 +29,7 @@ export class Slide1 {
     resume:
       'https://public-cdev.s3.us-east-2.amazonaws.com/ChelseaMay2025resume.pdf',
   };
+
   scrollTo(id: string) {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
