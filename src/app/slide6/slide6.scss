@@ -16,5 +16,33 @@
 }
 
 .blurb {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 0.75rem;
   flex-grow: 2;
+}
+
+/* Base button style, same minimal style as intro slide */
+.projectBtn {
+  display: inline-block;
+  margin: 0; /* we'll control horizontal position with flex */
+}
+
+/* Even cards: align button to the left */
+.projectBtn:not(.odd) {
+  align-self: flex-start;
+}
+
+/* Odd cards: align button to the right */
+.projectBtn.odd {
+  align-self: flex-end;
+}
+
+/* Mobile: center the button so it doesn't feel cramped */
+@media (max-width: 768px) {
+  .projectBtn,
+  .projectBtn.odd {
+    align-self: end;
+  }
 }

@@ -48,24 +48,6 @@ $xmas-green: #4cae4fff;
   width: min(520px, 100%);
   margin-top: clamp(8px, 2.5vw, 16px);
 }
-.btn {
-  display: inline-block;
-  padding: 10px 14px;
-  border-radius: 12px;
-  background: var(--btn-bg);
-  color: var(--btn-ink);
-  text-decoration: none;
-  font-weight: 600;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  transition: background 160ms ease, transform 120ms ease;
-}
-.btn:hover {
-  background: var(--btn-bg-hover);
-}
-.btn:active {
-  transform: translateY(1px);
-}
-
 @media (min-width: 640px) {
   .cta {
     grid-template-columns: repeat(4, 1fr);

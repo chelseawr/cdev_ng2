@@ -1,91 +1,91 @@
-<main>
+<main id="main-content">
   <div #topSentinel class="top-sentinel" aria-hidden="true"></div>
   @if (responsive.isPhonePortrait()){
   <!-- Mobile/portrait: right-side pager dots -->
-  <nav class="pager" aria-label="Sections">
+  <nav class="pager" aria-label="Page Menu">
     <button
       type="button"
       class="dot"
-      [class.active]="activeId === 'slide1'"
-      aria-label="Slide 1"
-      [attr.aria-current]="activeId === 'slide1' ? 'true' : null"
-      (click)="scrollTo('slide1')"
+      [class.active]="activeId === 'home'"
+      aria-label="go to home"
+      [attr.aria-current]="activeId === 'home' ? 'true' : null"
+      (click)="scrollTo('home')"
     ></button>
 
     <button
       type="button"
       class="dot"
-      [class.active]="activeId === 'slide2'"
-      aria-label="Slide 2"
-      [attr.aria-current]="activeId === 'slide2' ? 'true' : null"
-      (click)="scrollTo('slide2')"
+      [class.active]="activeId === 'intro'"
+      aria-label="go to intro section"
+      [attr.aria-current]="activeId === 'intro' ? 'true' : null"
+      (click)="scrollTo('intro')"
     ></button>
 
     <button
       type="button"
       class="dot"
-      [class.active]="activeId === 'slide3'"
-      aria-label="Slide 3"
-      [attr.aria-current]="activeId === 'slide3' ? 'true' : null"
-      (click)="scrollTo('slide3')"
+      [class.active]="activeId === 'experience'"
+      aria-label="go to experience section"
+      [attr.aria-current]="activeId === 'experience' ? 'true' : null"
+      (click)="scrollTo('experience')"
     ></button>
 
     <button
       type="button"
       class="dot"
-      [class.active]="activeId === 'slide4'"
-      aria-label="Slide 4"
-      [attr.aria-current]="activeId === 'slide4' ? 'true' : null"
-      (click)="scrollTo('slide4')"
+      [class.active]="activeId === 'skills'"
+      aria-label="go to skills section"
+      [attr.aria-current]="activeId === 'skills' ? 'true' : null"
+      (click)="scrollTo('skills')"
     ></button>
 
     <button
       type="button"
       class="dot"
-      [class.active]="activeId === 'slide6'"
-      aria-label="Slide 6"
-      [attr.aria-current]="activeId === 'slide6' ? 'true' : null"
-      (click)="scrollTo('slide6')"
+      [class.active]="activeId === 'projects'"
+      aria-label="go to projects section"
+      [attr.aria-current]="activeId === 'projects' ? 'true' : null"
+      (click)="scrollTo('projects')"
     ></button>
   </nav>
   } @else {
   <ul class="nav" [class.is-visible]="navVisible">
-    <li class="navitem" [class.active]="activeId === 'slide1'">
-      <a href="#slide1">home</a>
+    <li class="navitem" [class.active]="activeId === 'home'">
+      <a href="#home">home</a>
     </li>
-    <li class="navitem" [class.active]="activeId === 'slide2'">
-      <a href="#slide2">intro</a>
+    <li class="navitem" [class.active]="activeId === 'intro'">
+      <a href="#intro">intro</a>
     </li>
-    <li class="navitem" [class.active]="activeId === 'slide3'">
-      <a href="#slide3">experience</a>
+    <li class="navitem" [class.active]="activeId === 'experience'">
+      <a href="#experience">experience</a>
     </li>
-    <li class="navitem" [class.active]="activeId === 'slide4'">
-      <a href="#slide4">skills</a>
+    <li class="navitem" [class.active]="activeId === 'skills'">
+      <a href="#skills">skills</a>
     </li>
-    <li class="navitem" [class.active]="activeId === 'slide6'">
-      <a href="#slide6">projects</a>
+    <li class="navitem" [class.active]="activeId === 'projects'">
+      <a href="#projects">projects</a>
     </li>
   </ul>
   }
 
   <app-slide1
-    [scrollSpySection]="'slide1'"
+    scrollSpySection="home"
     (inView)="onSectionInView($event)"
   ></app-slide1>
   <app-slide2
-    [scrollSpySection]="'slide2'"
+    scrollSpySection="intro"
     (inView)="onSectionInView($event)"
   ></app-slide2
   ><app-slide3
-    [scrollSpySection]="'slide3'"
+    scrollSpySection="experience"
     (inView)="onSectionInView($event)"
   ></app-slide3>
   <app-slide4
-    [scrollSpySection]="'slide4'"
+    scrollSpySection="skills"
     (inView)="onSectionInView($event)"
   ></app-slide4>
   <app-slide6
-    [scrollSpySection]="'slide6'"
+    scrollSpySection="projects"
     (inView)="onSectionInView($event)"
   ></app-slide6>
 </main>

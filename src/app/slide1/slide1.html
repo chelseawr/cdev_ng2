@@ -1,24 +1,37 @@
 <section #watch>
   <div class="veil"></div>
-  <article class="card" id="slide1">
+  <article class="card" id="home">
     <div class="hero">
       <h1 class="name">Chelsea May</h1>
       <h4 class="subtitle">software engineer</h4>
 
       <nav class="cta">
-        <a class="btn" [href]="links.contact">Email Me</a>
-        <a class="btn" [href]="links.github" target="_blank" rel="noopener"
+        <a class="btn" aria-label="Send Chelsea an email" [href]="links.contact"
+          >Email Me</a
+        >
+        <a
+          class="btn"
+          [href]="links.github"
+          aria-label="Open GitHub profile"
+          target="_blank"
+          rel="noopener"
           >GitHub</a
         >
-        <a class="btn" [href]="links.linkedin" target="_blank" rel="noopener"
+        <a
+          class="btn"
+          [href]="links.linkedin"
+          aria-label="Open LinkedIn profile"
+          target="_blank"
+          rel="noopener"
           >LinkedIn</a
         >
         <a
           [href]="links.resume"
           [download]="links.fileName"
           target="_blank"
+          aria-label="View Resume"
           rel="noopener noreferrer"
-          class="btn socials"
+          class="btn"
           title="View Resume"
           >Résumé</a
         >
@@ -31,7 +44,7 @@
       [fixedWidth]="true"
       [icon]="faArrow"
       class="pulse-arrow"
-      (click)="scrollTo('slide2')"
+      (click)="scrollTo('intro')"
     >
     </fa-icon>
   </span>
