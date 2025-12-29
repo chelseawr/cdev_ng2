@@ -1,16 +1,3 @@
-$xmas-red: #f44034ff;
-$xmas-green: #4cae4fff;
-
-#hello {
-  margin-bottom: 0;
-  font-size: 1em;
-}
-
-#name {
-  color: $xmas-red;
-  font-size: xxx-large;
-  margin-top: 0;
-}
 
 h1,
 h2 {
@@ -53,7 +40,7 @@ main {
 }
 
 .pager .dot.active {
-  background: $xmas-green;
+  background: green;
   transform: scale(1.35);
   box-shadow: 0 0 0 4px #50b15324;
 }
@@ -90,6 +77,6 @@ main {
 }
 
 .nav .navitem.active a {
-  color: $xmas-green;
-  border-bottom: 2px solid $xmas-green;
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
 }

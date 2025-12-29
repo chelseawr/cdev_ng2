@@ -45,7 +45,7 @@ export class Slide6 {
       id: 'portfolio',
       title: 'Portfolio Website',
       link: 'https://github.com/chelseawr/cdev_ng2',
-      image: 'assets/portfolio-cap.JPG',
+      image: 'assets/portfolio-cap-grid.JPG',
       aboutText:
         'This portfolio is itself a live example of my front-end work, first launched in 2024 and iterated through multiple UI updates. Features a collapsible mobile UX built with Angular’s new template control flow and a custom responsive service.',
     },

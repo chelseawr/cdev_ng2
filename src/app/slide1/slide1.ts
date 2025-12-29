@@ -25,7 +25,7 @@ export class Slide1 {
     contact: 'mailto:chelsearmay51@gmail.com',
     github: 'https://github.com/chelseawr',
     linkedin: 'https://www.linkedin.com/in/chelseawr/',
-    fileName: 'ChelseaMay2025resume.pdf',
+    fileName: 'ChelseaMay2026-resume.pdf',
     resume:
       'https://public-cdev.s3.us-east-2.amazonaws.com/ChelseaMay2025resume.pdf',
   };

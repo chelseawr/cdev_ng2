@@ -1,6 +1,3 @@
-$xmas-red: #f44034ff;
-$xmas-green: #4cae4fff;
-
 .hero {
   display: grid;
   place-items: center;
@@ -22,13 +19,7 @@ $xmas-green: #4cae4fff;
   line-height: 0.9;
   text-transform: uppercase;
   font-size: clamp(48px, 14vw, 140px); /* mobile → desktop */
-  background: linear-gradient(
-    90deg,
-    #c8102e 0%,
-    /* deep red */ #ff4d4f 18%,
-    #1e7f3a 55%,
-    /* evergreen */ #2ebc66 85%
-  );
+  background: linear-gradient(140deg,rgba(224, 191, 212, 1) 0%, rgba(96, 43, 107, 1) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
