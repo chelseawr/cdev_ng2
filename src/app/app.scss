@@ -40,7 +40,7 @@ main {
 }
 
 .pager .dot.active {
-  background: green;
+  background: var(--accent);
   transform: scale(1.35);
   box-shadow: 0 0 0 4px #50b15324;
 }
@@ -58,7 +58,6 @@ main {
   justify-items: center;
   align-items: center;
   z-index: 10;
-  background-color: var(--dark-blue);
   opacity: 0;
   transition: opacity 0.3s;
   background-color: #000;
