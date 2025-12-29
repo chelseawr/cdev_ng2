@@ -27,7 +27,7 @@ export class Slide1 {
     linkedin: 'https://www.linkedin.com/in/chelseawr/',
     fileName: 'ChelseaMay2026-resume.pdf',
     resume:
-      'https://public-cdev.s3.us-east-2.amazonaws.com/ChelseaMay2025resume.pdf',
+      'https://public-cdev.s3.us-east-2.amazonaws.com/ChelseaMay2026-resume.pdf',
   };
 
   scrollTo(id: string) {
