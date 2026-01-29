@@ -1,7 +1,6 @@
-
 h1,
 h2 {
-  font-family: "Lekton", sans-serif;
+  font-family: 'Lekton', sans-serif;
 }
 
 main {
@@ -35,7 +34,10 @@ main {
   border: 0;
   background: #c7ccd4;
   box-shadow: 0 0 0 2px transparent;
-  transition: transform 140ms ease, background 140ms ease, box-shadow 140ms ease;
+  transition:
+    transform 140ms ease,
+    background 140ms ease,
+    box-shadow 140ms ease;
   cursor: pointer;
 }
 
