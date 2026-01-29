@@ -51,7 +51,7 @@ export class Slide4 {
       type: 'testing',
       icon: faFlask,
       items:
-        'Playwright, Mockito, React Testing Library, Pact, Cypress, Jest, ESLint',
+        'Playwright, Cypress, Mockito, React Testing Library, Pact, Jest, ESLint',
     },
     {
       type: 'devOps & cloud',
@@ -74,8 +74,8 @@ export class Slide4 {
     return isOpen
       ? faChevronDown
       : i % 2 === 0
-      ? faChevronRight
-      : faChevronLeft;
+        ? faChevronRight
+        : faChevronLeft;
   }
 
   onToggle(id: string, ev: MouseEvent) {

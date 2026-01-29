@@ -19,6 +19,7 @@ import {
 } from '@angular/core';
 import { ResponsiveService } from './responsive.service';
 import { Slide6 } from './slide6/slide6';
+import { ScrollService } from './services/scroll.service';
 
 @Directive({
   selector: '[scrollSpySection]',
@@ -29,7 +30,10 @@ export class ScrollSpySectionDirective implements AfterViewInit, OnDestroy {
   @Output() inView = new EventEmitter<string>();
 
   private intersectionObserver?: IntersectionObserver;
-  constructor(private el: ElementRef<HTMLElement>, private zone: NgZone) {}
+  constructor(
+    private el: ElementRef<HTMLElement>,
+    private zone: NgZone,
+  ) {}
 
   // which one to highlight
   ngAfterViewInit(): void {
@@ -44,7 +48,7 @@ export class ScrollSpySectionDirective implements AfterViewInit, OnDestroy {
             }
           }
         },
-        { threshold: 0.6 }
+        { threshold: 0.6 },
       );
 
       this.intersectionObserver.observe(this.el.nativeElement);
@@ -79,7 +83,11 @@ export class App implements AfterViewInit, OnDestroy {
   activeId: string | null = null;
   navVisible = false;
   private visibilityObserver?: IntersectionObserver;
-  constructor(private zone: NgZone, public responsive: ResponsiveService) {}
+  constructor(
+    private zone: NgZone,
+    public responsive: ResponsiveService,
+    public scroll: ScrollService,
+  ) {}
 
   // show/hide nav itself
   ngAfterViewInit(): void {
@@ -105,9 +113,8 @@ export class App implements AfterViewInit, OnDestroy {
     }
   }
 
-  scrollTo(id: string) {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  scrollTo(id: string): void {
+    this.scroll.scrollTo(id);
   }
 }
 

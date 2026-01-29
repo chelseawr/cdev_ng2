@@ -58,6 +58,16 @@
           },
           "defaultConfiguration": "production"
         },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "runner": "vitest",
+            "codeCoverage": false,
+            "tsConfig": "tsconfig.spec.json",
+            "buildTarget": "cdev_ng2:build:development",
+            "setupFiles": ["src/vitest.setup.ts"]
+          }
+        },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {

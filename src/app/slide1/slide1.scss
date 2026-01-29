@@ -1,6 +1,3 @@
-$xmas-red: #f44034ff;
-$xmas-green: #4cae4fff;
-
 .hero {
   display: grid;
   place-items: center;
@@ -16,18 +13,16 @@ $xmas-green: #4cae4fff;
 /* Big, tall nameplate with gradient text */
 .name {
   margin: 0;
-  font-family: "Russo One", system-ui, sans-serif;
+  font-family: 'Russo One', system-ui, sans-serif;
   font-weight: 400;
   letter-spacing: 0.02em;
   line-height: 0.9;
   text-transform: uppercase;
   font-size: clamp(48px, 14vw, 140px); /* mobile → desktop */
   background: linear-gradient(
-    90deg,
-    #c8102e 0%,
-    /* deep red */ #ff4d4f 18%,
-    #1e7f3a 55%,
-    /* evergreen */ #2ebc66 85%
+    140deg,
+    rgba(224, 191, 212, 1) 0%,
+    rgba(96, 43, 107, 1) 100%
   );
   -webkit-background-clip: text;
   background-clip: text;
@@ -100,7 +95,8 @@ $xmas-green: #4cae4fff;
   }
   50% {
     transform: translateX(2px) scale(1.06);
-    text-shadow: 0 0 6px rgba(0, 0, 0, 0.08),
+    text-shadow:
+      0 0 6px rgba(0, 0, 0, 0.08),
       0 0 10px
         color-mix(
           in srgb,
