@@ -6,13 +6,13 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { ResponsiveService } from '../responsive.service';
 
 @Component({
-  selector: 'app-slide1',
+  selector: 'app-home',
   standalone: true,
   imports: [FontAwesomeModule, MatButtonModule],
-  templateUrl: './slide1.html',
-  styleUrl: './slide1.scss',
+  templateUrl: './home.html',
+  styleUrl: './home.scss',
 })
-export class Slide1 {
+export class HomeComponent {
   constructor(
     public responsive: ResponsiveService,
     public scroll: ScrollService,

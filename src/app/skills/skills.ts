@@ -20,12 +20,12 @@ interface Skill {
 }
 
 @Component({
-  selector: 'app-slide4',
+  selector: 'app-skills',
   imports: [FontAwesomeModule],
-  templateUrl: './slide4.html',
-  styleUrl: './slide4.scss',
+  templateUrl: './skills.html',
+  styleUrl: './skills.scss',
 })
-export class Slide4 {
+export class SkillsComponent {
   constructor(public responsive: ResponsiveService) {}
 
   faDisplay = faDisplay;

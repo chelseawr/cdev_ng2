@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ResponsiveService } from '../responsive.service';
 import {
   faArrowLeft,
   faArrowRight,
@@ -9,21 +8,29 @@ import {
   IconDefinition,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+interface Project {
+  id: string;
+  title: string;
+  link?: string;
+  image: string;
+  aboutText: string;
+}
+
 @Component({
-  selector: 'app-slide6',
+  selector: 'app-projects',
   imports: [FontAwesomeModule],
-  templateUrl: './slide6.html',
-  styleUrl: './slide6.scss',
+  templateUrl: './projects.html',
+  styleUrl: './projects.scss',
 })
-export class Slide6 {
+export class ProjectsComponent {
   faArrowLeft = faArrowLeft;
   faArrowRight = faArrowRight;
   faChevronLeft = faChevronLeft;
   faChevronRight = faChevronRight;
   faChevronDown = faChevronDown;
 
-  // make this a global service
-  iconFor(i: number, p: any): IconDefinition {
+  iconFor(i: number, p: Project): IconDefinition {
     const isOpen = this.openId === p.id;
     return isOpen
       ? faChevronDown
@@ -32,14 +39,14 @@ export class Slide6 {
         : faChevronLeft;
   }
 
-  projects = [
+  projects: Project[] = [
     {
       id: 'farm',
       title: 'Hay May Farm',
       link: 'https://www.haymayfarm.com',
       image: 'assets/farm-cap.JPG',
       aboutText:
-        'The public site for our family farm, built with React 20 and Vite for fast client-side rendering. Deployed on AWS S3 + CloudFront with a simple, responsive design that continues to evolve as we expand the farm’s offerings.',
+        "The public site for our family farm, built with React 20 and Vite for fast client-side rendering. Deployed on AWS S3 + CloudFront with a simple, responsive design that continues to evolve as we expand the farm's offerings.",
     },
     {
       id: 'portfolio',
@@ -47,7 +54,7 @@ export class Slide6 {
       link: 'https://github.com/chelseawr/cdev_ng2',
       image: 'assets/portfolio-cap-grid.JPG',
       aboutText:
-        'This portfolio is itself a live example of my front-end work, first launched in 2024 and iterated through multiple UI updates. Features a collapsible mobile UX built with Angular’s new template control flow and a custom responsive service.',
+        "This portfolio is itself a live example of my front-end work, first launched in 2024 and iterated through multiple UI updates. Features a collapsible mobile UX built with Angular's new template control flow and a custom responsive service.",
     },
     {
       id: 'pandas',

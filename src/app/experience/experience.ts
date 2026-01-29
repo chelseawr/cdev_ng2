@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {
   faArrowLeft,
@@ -12,13 +12,13 @@ import { Role, ROLES } from './roles.data';
 import { ResponsiveService } from '../responsive.service';
 
 @Component({
-  selector: 'app-slide3',
+  selector: 'app-experience',
   standalone: true,
   imports: [FontAwesomeModule],
-  templateUrl: './slide3.html',
-  styleUrl: './slide3.scss',
+  templateUrl: './experience.html',
+  styleUrl: './experience.scss',
 })
-export class Slide3 {
+export class ExperienceComponent {
   constructor(public responsive: ResponsiveService) {}
 
   faArrowLeft = faArrowLeft;

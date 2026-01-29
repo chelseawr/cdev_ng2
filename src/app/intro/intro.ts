@@ -3,13 +3,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { CommonModule } from '@angular/common';
 @Component({
-  selector: 'app-slide2',
+  selector: 'app-intro',
   standalone: true,
   imports: [FontAwesomeModule, CommonModule],
-  templateUrl: './slide2.html',
-  styleUrl: './slide2.scss',
+  templateUrl: './intro.html',
+  styleUrl: './intro.scss',
 })
-export class Slide2 implements OnInit {
+export class IntroComponent implements OnInit {
   isPhonePortrait = false;
   constructor(private responsive: BreakpointObserver) {}
   ngOnInit(): void {

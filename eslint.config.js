@@ -35,6 +35,8 @@ module.exports = tseslint.config(
         { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
       ],
       '@angular-eslint/no-empty-lifecycle-method': 'warn',
+      '@angular-eslint/prefer-inject': 'off',
+      '@angular-eslint/directive-selector': 'off',
     },
   },
   {
