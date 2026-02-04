@@ -49,55 +49,62 @@
     ></button>
   </nav>
   } @else {
-  <ul class="nav" [class.is-visible]="navVisible">
-    <li class="navitem" [class.active]="activeId === 'home'">
-      <a href="#home">home</a>
-    </li>
-    <li class="navitem" [class.active]="activeId === 'intro'">
-      <a href="#intro">intro</a>
-    </li>
-    <li class="navitem" [class.active]="activeId === 'experience'">
-      <a href="#experience">experience</a>
-    </li>
-    <li class="navitem" [class.active]="activeId === 'skills'">
-      <a href="#skills">skills</a>
-    </li>
-    <li class="navitem" [class.active]="activeId === 'projects'">
-      <a href="#projects">projects</a>
-    </li>
-  </ul>
+  <nav class="nav" [class.is-visible]="navVisible" aria-label="Main Menu">
+    <a
+      class="navitem"
+      [class.active]="activeId === 'home'"
+      (click)="scrollTo('home'); $event.preventDefault()"
+      href="#home"
+      >home</a
+    >
+    <a
+      class="navitem"
+      [class.active]="activeId === 'intro'"
+      (click)="scrollTo('intro'); $event.preventDefault()"
+      href="#intro"
+      >intro</a
+    >
+    <a
+      class="navitem"
+      [class.active]="activeId === 'experience'"
+      (click)="scrollTo('experience'); $event.preventDefault()"
+      href="#experience"
+      >experience</a
+    >
+    <a
+      class="navitem"
+      [class.active]="activeId === 'skills'"
+      (click)="scrollTo('skills'); $event.preventDefault()"
+      href="#skills"
+      >skills</a
+    >
+    <a
+      class="navitem"
+      [class.active]="activeId === 'projects'"
+      (click)="scrollTo('projects'); $event.preventDefault()"
+      href="#projects"
+      >projects</a
+    >
+  </nav>
   }
-
-  <app-slide1
+  <app-home
     scrollSpySection="home"
     (inView)="onSectionInView($event)"
-  ></app-slide1>
-  <app-slide2
+  ></app-home>
+  <app-intro
     scrollSpySection="intro"
     (inView)="onSectionInView($event)"
-  ></app-slide2
-  ><app-slide3
+  ></app-intro>
+  <app-experience
     scrollSpySection="experience"
     (inView)="onSectionInView($event)"
-  ></app-slide3>
-  <app-slide4
+  ></app-experience>
+  <app-skills
     scrollSpySection="skills"
     (inView)="onSectionInView($event)"
-  ></app-slide4>
-  <app-slide6
+  ></app-skills>
+  <app-projects
     scrollSpySection="projects"
     (inView)="onSectionInView($event)"
-  ></app-slide6>
+  ></app-projects>
 </main>
-<!--
-
-replace education slide5 with projects slide 6
-mobile and desktop
-
-
-later
-pro icons fancy
-page anchors match actual titles
-fancy a href on education desktop page
-basic test coverage
-readme writeup-->

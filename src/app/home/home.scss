@@ -1,0 +1,110 @@
+.hero {
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.stack {
+  display: grid;
+  gap: clamp(10px, 2.5vw, 18px);
+  justify-items: center;
+}
+
+/* Big, tall nameplate with gradient text */
+.name {
+  margin: 0;
+  font-family: "Russo One", system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 0.9;
+  text-transform: uppercase;
+  font-size: clamp(48px, 14vw, 140px); /* mobile → desktop */
+  background: linear-gradient(140deg,rgba(224, 191, 212, 1) 0%, rgba(96, 43, 107, 1) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 0.01px rgba(0, 0, 0, 0.01);
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(14px, 4.2vw, 22px);
+}
+
+.cta {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  width: min(520px, 100%);
+  margin-top: clamp(8px, 2.5vw, 16px);
+}
+@media (min-width: 640px) {
+  .cta {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+#arrow {
+  text-align: center;
+  margin-top: 10vh;
+  font-size: 40px;
+}
+
+#arrow:hover {
+  cursor: pointer;
+}
+
+.pulse-arrow {
+  --pulse-color: currentColor; /* inherits from color */
+  --glow-alpha: 0.6;
+  animation: arrowPulse 1.8s ease-in-out infinite;
+  will-change: transform, filter;
+}
+
+@keyframes arrowPulse {
+  0%,
+  100% {
+    transform: translateX(0) scale(1);
+    filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0))
+      drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+  }
+  50% {
+    transform: translateX(2px) scale(1.06);
+    filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.08))
+      drop-shadow(
+        0 0 10px
+          color-mix(
+            in srgb,
+            var(--pulse-color) calc(var(--glow-alpha) * 100%),
+            transparent
+          )
+      );
+  }
+}
+
+@keyframes arrowPulseFont {
+  0%,
+  100% {
+    transform: translateX(0) scale(1);
+    text-shadow: none;
+  }
+  50% {
+    transform: translateX(2px) scale(1.06);
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.08),
+      0 0 10px
+        color-mix(
+          in srgb,
+          var(--pulse-color) calc(var(--glow-alpha) * 100%),
+          transparent
+        );
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .pulse-arrow,
+  .pulse-arrow-font {
+    animation: none;
+  }
+}

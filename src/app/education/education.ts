@@ -8,12 +8,12 @@ type EduItem = {
 };
 
 @Component({
-  selector: 'app-slide5',
+  selector: 'app-education',
   imports: [],
-  templateUrl: './slide5.html',
-  styleUrl: './slide5.scss',
+  templateUrl: './education.html',
+  styleUrl: './education.scss',
 })
-export class Slide5 {
+export class EducationComponent {
   constructor(public responsive: ResponsiveService) {}
   items: EduItem[] = [
     {

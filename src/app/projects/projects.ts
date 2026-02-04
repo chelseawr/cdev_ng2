@@ -1,0 +1,82 @@
+import { Component } from '@angular/core';
+import {
+  faArrowLeft,
+  faArrowRight,
+  faChevronDown,
+  faChevronLeft,
+  faChevronRight,
+  IconDefinition,
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+interface Project {
+  id: string;
+  title: string;
+  link?: string;
+  image: string;
+  aboutText: string;
+}
+
+@Component({
+  selector: 'app-projects',
+  imports: [FontAwesomeModule],
+  templateUrl: './projects.html',
+  styleUrl: './projects.scss',
+})
+export class ProjectsComponent {
+  faArrowLeft = faArrowLeft;
+  faArrowRight = faArrowRight;
+  faChevronLeft = faChevronLeft;
+  faChevronRight = faChevronRight;
+  faChevronDown = faChevronDown;
+
+  iconFor(i: number, p: Project): IconDefinition {
+    const isOpen = this.openId === p.id;
+    return isOpen
+      ? faChevronDown
+      : i % 2 === 0
+        ? faChevronRight
+        : faChevronLeft;
+  }
+
+  projects: Project[] = [
+    {
+      id: 'farm',
+      title: 'Hay May Farm',
+      link: 'https://www.haymayfarm.com',
+      image: 'assets/farm-cap.JPG',
+      aboutText:
+        "The public site for our family farm, built with React 20 and Vite for fast client-side rendering. Deployed on AWS S3 + CloudFront with a simple, responsive design that continues to evolve as we expand the farm's offerings.",
+    },
+    {
+      id: 'portfolio',
+      title: 'Portfolio Website',
+      link: 'https://github.com/chelseawr/cdev_ng2',
+      image: 'assets/portfolio-cap-grid.JPG',
+      aboutText:
+        "This portfolio is itself a live example of my front-end work, first launched in 2024 and iterated through multiple UI updates. Features a collapsible mobile UX built with Angular's new template control flow and a custom responsive service.",
+    },
+    {
+      id: 'pandas',
+      title: 'Messenger Data Analyzer',
+      link: 'https://github.com/chelseawr/messenger_analysis',
+      image: 'assets/pandas.png',
+      aboutText:
+        'A Python project from 2022 using Pandas + Plotly to explore exported Facebook Messenger data. Provides interactive CLI menus and visualizations for message stats, top contacts, and activity pattern',
+    },
+    {
+      id: 'mirror',
+      title: 'Smart Mirror',
+      aboutText:
+        'A wall-mounted dashboard app rebuilt in 2022 with Angular 13 after an early 2019 version using AngularJS. Aggregates APIs for weather, commute times, to-do lists, and calendars into a real-time home display.',
+      image: 'assets/mirror.png',
+    },
+  ];
+
+  openId: string | null = null;
+
+  onToggle(id: string, ev: MouseEvent) {
+    ev.preventDefault();
+    this.openId = this.openId === id ? null : id;
+  }
+}
