@@ -13,13 +13,17 @@
 /* Big, tall nameplate with gradient text */
 .name {
   margin: 0;
-  font-family: "Russo One", system-ui, sans-serif;
+  font-family: 'Russo One', system-ui, sans-serif;
   font-weight: 400;
   letter-spacing: 0.02em;
   line-height: 0.9;
   text-transform: uppercase;
   font-size: clamp(48px, 14vw, 140px); /* mobile → desktop */
-  background: linear-gradient(140deg,rgba(224, 191, 212, 1) 0%, rgba(96, 43, 107, 1) 100%);
+  background: linear-gradient(
+    140deg,
+    rgba(224, 191, 212, 1) 0%,
+    rgba(96, 43, 107, 1) 100%
+  );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -91,7 +95,8 @@
   }
   50% {
     transform: translateX(2px) scale(1.06);
-    text-shadow: 0 0 6px rgba(0, 0, 0, 0.08),
+    text-shadow:
+      0 0 6px rgba(0, 0, 0, 0.08),
       0 0 10px
         color-mix(
           in srgb,

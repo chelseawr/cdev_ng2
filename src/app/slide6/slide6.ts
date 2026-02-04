@@ -28,8 +28,8 @@ export class Slide6 {
     return isOpen
       ? faChevronDown
       : i % 2 === 0
-      ? faChevronRight
-      : faChevronLeft;
+        ? faChevronRight
+        : faChevronLeft;
   }
 
   projects = [

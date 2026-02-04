@@ -34,8 +34,8 @@ export class Slide3 {
     return isOpen
       ? faChevronDown
       : i % 2 === 0
-      ? faChevronRight
-      : faChevronLeft;
+        ? faChevronRight
+        : faChevronLeft;
   }
   onToggle(id: string, ev: MouseEvent) {
     ev.preventDefault();
