@@ -3,27 +3,23 @@ frontend:
   phases:
     preBuild:
       commands:
-        - rm -rf node_modules package-lock.json
-        - rm -rf ~/.npm # Clear global npm cache to avoid stale packages
-        - npm cache clean --force
+        - command -v chromium-browser || yum install -y chromium || true
         - nvm install 22.21.0
         - nvm use 22.21.0
-        # - rm -f ~/.npmrc || true
-        - npm config delete @fortawesome:registry || true
-        - npm install -g aws-cdk
-        - npm install -g @angular/cli
-        - npm i --verbose
-        # - npm ci --cache .npm --prefer-offline
-        # - npx ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AWS_APP_ID
-
+        - npm ci
     build:
       commands:
-        # - cdk bootstrap aws://096726583123/us-east-2
-        - ng build
+        - |
+          if command -v chromium-browser &> /dev/null || command -v google-chrome &> /dev/null; then
+            npx ng test --no-watch --browsers=ChromeHeadless
+          else
+            echo "Chrome not found, skipping tests"
+          fi
+        - npx ng build
   artifacts:
     baseDirectory: dist/cdev_ng2
     files:
-      - "**/*"
+      - '**/*'
   cache:
     paths:
       - .npm/**/*

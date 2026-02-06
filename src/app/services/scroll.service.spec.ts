@@ -1,6 +1,5 @@
 import { TestBed } from '@angular/core/testing';
 import { DOCUMENT } from '@angular/common';
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { ScrollService } from './scroll.service';
 
 describe('ScrollService', () => {
@@ -14,15 +13,14 @@ describe('ScrollService', () => {
 
     service = TestBed.inject(ScrollService);
     doc = TestBed.inject(DOCUMENT);
-
-    vi.restoreAllMocks();
   });
+
   afterEach(() => {
     TestBed.resetTestingModule();
   });
 
   it('returns false when target element is missing', () => {
-    vi.spyOn(doc, 'getElementById').mockReturnValue(null);
+    spyOn(doc, 'getElementById').and.returnValue(null);
 
     const result = service.scrollTo('missing');
 
@@ -32,14 +30,10 @@ describe('ScrollService', () => {
 
   it('calls scrollIntoView with default options when element exists', () => {
     const el = document.createElement('div');
-    const scrollIntoViewSpy = vi.fn();
-    (
-      el as unknown as {
-        scrollIntoView: (opts?: ScrollIntoViewOptions) => void;
-      }
-    ).scrollIntoView = scrollIntoViewSpy;
+    const scrollIntoViewSpy = jasmine.createSpy('scrollIntoView');
+    el.scrollIntoView = scrollIntoViewSpy;
 
-    vi.spyOn(doc, 'getElementById').mockReturnValue(el);
+    spyOn(doc, 'getElementById').and.returnValue(el);
 
     const result = service.scrollTo('intro');
 
@@ -52,14 +46,10 @@ describe('ScrollService', () => {
 
   it('passes custom options through', () => {
     const el = document.createElement('div');
-    const scrollIntoViewSpy = vi.fn();
-    (
-      el as unknown as {
-        scrollIntoView: (opts?: ScrollIntoViewOptions) => void;
-      }
-    ).scrollIntoView = scrollIntoViewSpy;
+    const scrollIntoViewSpy = jasmine.createSpy('scrollIntoView');
+    el.scrollIntoView = scrollIntoViewSpy;
 
-    vi.spyOn(doc, 'getElementById').mockReturnValue(el);
+    spyOn(doc, 'getElementById').and.returnValue(el);
 
     service.scrollTo('intro', { behavior: 'auto', block: 'center' });
 
