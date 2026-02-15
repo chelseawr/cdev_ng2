@@ -12,28 +12,27 @@ import {
   NgZone,
   OnDestroy,
   ViewChild,
-  Input,
-  Output,
-  EventEmitter,
   Directive,
+  inject,
+  input,
+  output,
+  signal,
 } from '@angular/core';
 import { ResponsiveService } from './responsive.service';
 import { ProjectsComponent } from './projects/projects';
 import { ScrollService } from './services/scroll.service';
 
 @Directive({
-  selector: '[scrollSpySection]',
+  selector: '[appScrollSpySection]',
   standalone: true,
 })
 export class ScrollSpySectionDirective implements AfterViewInit, OnDestroy {
-  @Input('scrollSpySection') id!: string;
-  @Output() inView = new EventEmitter<string>();
+  readonly id = input.required<string>({ alias: 'appScrollSpySection' });
+  readonly inView = output<string>();
 
+  private readonly el = inject(ElementRef<HTMLElement>);
+  private readonly zone = inject(NgZone);
   private intersectionObserver?: IntersectionObserver;
-  constructor(
-    private el: ElementRef<HTMLElement>,
-    private zone: NgZone,
-  ) {}
 
   // which one to highlight
   ngAfterViewInit(): void {
@@ -43,7 +42,7 @@ export class ScrollSpySectionDirective implements AfterViewInit, OnDestroy {
           for (const e of entries) {
             if (e.target === this.el.nativeElement && e.isIntersecting) {
               this.zone.run(() => {
-                this.inView.emit(this.id);
+                this.inView.emit(this.id());
               });
             }
           }
@@ -80,26 +79,20 @@ export class App implements AfterViewInit, OnDestroy {
   @ViewChild('topSentinel', { read: ElementRef })
   topSentinel!: ElementRef<HTMLElement>;
 
-  activeId: string | null = null;
-  navVisible = false;
+  readonly activeId = signal<string | null>(null);
+  readonly navVisible = signal(false);
+  readonly responsive = inject(ResponsiveService);
+  readonly scroll = inject(ScrollService);
   private visibilityObserver?: IntersectionObserver;
-  constructor(
-    private zone: NgZone,
-    public responsive: ResponsiveService,
-    public scroll: ScrollService,
-  ) {}
 
   // show/hide nav itself
   ngAfterViewInit(): void {
-    this.zone.runOutsideAngular(() => {
-      this.visibilityObserver = new IntersectionObserver((entries) => {
-        const sentinelVisible = entries[0]?.isIntersecting ?? true;
-        // reenter Angular so the template updates
-        this.zone.run(() => (this.navVisible = !sentinelVisible));
-      });
-
-      this.visibilityObserver.observe(this.topSentinel.nativeElement);
+    this.visibilityObserver = new IntersectionObserver((entries) => {
+      const sentinelVisible = entries[0]?.isIntersecting ?? true;
+      this.navVisible.set(!sentinelVisible);
     });
+
+    this.visibilityObserver.observe(this.topSentinel.nativeElement);
   }
 
   ngOnDestroy(): void {
@@ -107,8 +100,8 @@ export class App implements AfterViewInit, OnDestroy {
   }
 
   onSectionInView(id: string) {
-    if (this.activeId !== id) {
-      this.activeId = id;
+    if (this.activeId() !== id) {
+      this.activeId.set(id);
       history.replaceState(null, '', `/${id}`);
     }
   }

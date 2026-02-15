@@ -1,12 +1,13 @@
-import { Injectable, signal } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Injectable({ providedIn: 'root' })
 export class ResponsiveService {
+  private readonly bp = inject(BreakpointObserver);
   readonly isPhonePortrait = signal(false);
   readonly isDesktop = signal(false);
 
-  constructor(private bp: BreakpointObserver) {
+  constructor() {
     const body = document.body;
 
     this.bp
