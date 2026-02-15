@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {
   faArrowLeft,
@@ -19,7 +19,7 @@ import { ResponsiveService } from '../responsive.service';
   styleUrl: './experience.scss',
 })
 export class ExperienceComponent {
-  constructor(public responsive: ResponsiveService) {}
+  readonly responsive = inject(ResponsiveService);
 
   faArrowLeft = faArrowLeft;
   faArrowRight = faArrowRight;

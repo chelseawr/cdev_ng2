@@ -16,6 +16,7 @@ import {
   Output,
   EventEmitter,
   Directive,
+  inject,
 } from '@angular/core';
 import { ResponsiveService } from './responsive.service';
 import { ProjectsComponent } from './projects/projects';
@@ -29,11 +30,9 @@ export class ScrollSpySectionDirective implements AfterViewInit, OnDestroy {
   @Input('scrollSpySection') id!: string;
   @Output() inView = new EventEmitter<string>();
 
+  private readonly el = inject(ElementRef<HTMLElement>);
+  private readonly zone = inject(NgZone);
   private intersectionObserver?: IntersectionObserver;
-  constructor(
-    private el: ElementRef<HTMLElement>,
-    private zone: NgZone,
-  ) {}
 
   // which one to highlight
   ngAfterViewInit(): void {
@@ -82,12 +81,10 @@ export class App implements AfterViewInit, OnDestroy {
 
   activeId: string | null = null;
   navVisible = false;
+  private readonly zone = inject(NgZone);
+  readonly responsive = inject(ResponsiveService);
+  readonly scroll = inject(ScrollService);
   private visibilityObserver?: IntersectionObserver;
-  constructor(
-    private zone: NgZone,
-    public responsive: ResponsiveService,
-    public scroll: ScrollService,
-  ) {}
 
   // show/hide nav itself
   ngAfterViewInit(): void {

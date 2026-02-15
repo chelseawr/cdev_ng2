@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {
   faDatabase,
@@ -26,7 +26,7 @@ interface Skill {
   styleUrl: './skills.scss',
 })
 export class SkillsComponent {
-  constructor(public responsive: ResponsiveService) {}
+  readonly responsive = inject(ResponsiveService);
 
   faDisplay = faDisplay;
   faDatabase = faDatabase;

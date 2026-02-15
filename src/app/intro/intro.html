@@ -3,7 +3,7 @@
   <article class="card">
     <div class="hero">
       <h1 id="cardTitle">introduction</h1>
-      <div id="innerbox" [ngClass]="{ isNotPhone: !isPhonePortrait }">
+      <div id="innerbox" [class.isNotPhone]="!responsive.isPhonePortrait()">
         <h2 id="text">
           Experienced, cleared senior software engineer with a diverse technical
           background and rare mix of technical rigor, clear communication, and
