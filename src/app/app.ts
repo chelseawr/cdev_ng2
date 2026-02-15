@@ -12,23 +12,22 @@ import {
   NgZone,
   OnDestroy,
   ViewChild,
-  Input,
-  Output,
-  EventEmitter,
   Directive,
   inject,
+  input,
+  output,
 } from '@angular/core';
 import { ResponsiveService } from './responsive.service';
 import { ProjectsComponent } from './projects/projects';
 import { ScrollService } from './services/scroll.service';
 
 @Directive({
-  selector: '[scrollSpySection]',
+  selector: '[appScrollSpySection]',
   standalone: true,
 })
 export class ScrollSpySectionDirective implements AfterViewInit, OnDestroy {
-  @Input('scrollSpySection') id!: string;
-  @Output() inView = new EventEmitter<string>();
+  readonly id = input.required<string>({ alias: 'appScrollSpySection' });
+  readonly inView = output<string>();
 
   private readonly el = inject(ElementRef<HTMLElement>);
   private readonly zone = inject(NgZone);
@@ -42,7 +41,7 @@ export class ScrollSpySectionDirective implements AfterViewInit, OnDestroy {
           for (const e of entries) {
             if (e.target === this.el.nativeElement && e.isIntersecting) {
               this.zone.run(() => {
-                this.inView.emit(this.id);
+                this.inView.emit(this.id());
               });
             }
           }
