@@ -41,12 +41,19 @@ export class ProjectsComponent {
 
   projects: Project[] = [
     {
+      id: 'livestock-app',
+      title: 'Animal Husbandry App',
+      image: 'assets/livestock_app_cap.JPG',
+      aboutText:
+        'Built with Java 21/SpringBoot 3.5 and React 19, allows a working farm to track animals by species, location, tags, and photos, visualize parent/child lineage as an interactive family tree, and run a tap-to-count headcount pass over the herd. In progress.',
+    },
+    {
       id: 'farm',
       title: 'Hay May Farm',
       link: 'https://www.haymayfarm.com',
       image: 'assets/farm-cap.JPG',
       aboutText:
-        "The public site for our family farm, built with React 20 and Vite for fast client-side rendering. Deployed on AWS S3 + CloudFront with a simple, responsive design that continues to evolve as we expand the farm's offerings.",
+        "The public site for our family farm, built with React 19 and Vite for fast client-side rendering. Deployed on AWS S3 + CloudFront with a simple, responsive design that continues to evolve as we expand the farm's offerings.",
     },
     {
       id: 'portfolio',
