@@ -17,7 +17,7 @@ export const ROLES: Role[] = [
     dates: 'May 2026 - present',
     bullets: [
       'Mentored 3 junior developers on a team built around LLM-assisted rapid development, reviewing their PRs for correctness rather than plausibility and requiring them to explain generated code before merge; serve as the first point of contact for ad-hoc technical questions, absorbing escalation load that would otherwise route to the team lead.',
-      'Solo-delivered a Google Admin Console sync feature end to end in one sprint, replacing a manual spreadsheet export/import workflow and matching a capability competitors charge a premium for.',
+      'Solo-delivered a critical sync feature end to end in one sprint, replacing a manual spreadsheet export/import workflow and matching a capability competitors charge a premium for.',
       'Reviewed 150+ pull requests across 5 repositories in the first 3 months as a primary reviewer while independently closing bug and feature tickets, maintaining review turnaround on a team rapidly increasing merge volume through AI-assisted development.',
     ],
   },
