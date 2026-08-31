@@ -21,6 +21,7 @@ import {
 import { ResponsiveService } from './responsive.service';
 import { ProjectsComponent } from './projects/projects';
 import { ScrollService } from './services/scroll.service';
+import { GridBackgroundComponent } from './grid-background/grid-background';
 
 @Directive({
   selector: '[appScrollSpySection]',
@@ -73,6 +74,7 @@ export class ScrollSpySectionDirective implements AfterViewInit, OnDestroy {
     EducationComponent,
     ProjectsComponent,
     ScrollSpySectionDirective,
+    GridBackgroundComponent,
   ],
 })
 export class App implements AfterViewInit, OnDestroy {
